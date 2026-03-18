@@ -7,7 +7,7 @@ workers:
       branch: master
       deploy_on_push: true
     source_dir: agents
-    dockerfile_path: agents/Dockerfile
+    dockerfile_path: Dockerfile
     instance_count: 1
     instance_size_slug: apps-s-1vcpu-0.5gb
     envs:
