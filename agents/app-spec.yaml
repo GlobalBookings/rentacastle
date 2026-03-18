@@ -1,0 +1,37 @@
+name: rentacastle-agents
+region: lon
+workers:
+  - name: agent-runner
+    github:
+      repo: GlobalBookings/rentacastle
+      branch: master
+      deploy_on_push: true
+    source_dir: agents
+    dockerfile_path: agents/Dockerfile
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    envs:
+      - key: ANTHROPIC_API_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: GITHUB_TOKEN
+        scope: RUN_TIME
+        type: SECRET
+      - key: SERPAPI_KEY
+        scope: RUN_TIME
+        type: SECRET
+      - key: SLACK_WEBHOOK_URL
+        scope: RUN_TIME
+        type: SECRET
+      - key: SITE_URL
+        scope: RUN_TIME
+        value: https://rentacastle.uk
+      - key: SITEMAP_URL
+        scope: RUN_TIME
+        value: https://rentacastle.uk/sitemap-index.xml
+      - key: GITHUB_REPO
+        scope: RUN_TIME
+        value: GlobalBookings/rentacastle
+      - key: SEARCH_CONSOLE_SITE_URL
+        scope: RUN_TIME
+        value: https://rentacastle.uk

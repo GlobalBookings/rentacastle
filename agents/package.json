@@ -1,0 +1,22 @@
+{
+  "name": "rentacastle-agents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "content": "node src/run.js content-publisher",
+    "keywords": "node src/run.js keyword-miner",
+    "links": "node src/run.js internal-linker",
+    "test": "node src/run.js test"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "axios": "^1.13.6",
+    "dotenv": "^16.4.7",
+    "express": "^5.2.1",
+    "googleapis": "^144.0.0",
+    "node-cron": "^3.0.3",
+    "resend": "^6.9.3"
+  }
+}

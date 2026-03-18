@@ -5,3 +5,6 @@ dist/
 .DS_Store
 scripts/output/
 __pycache__/
+agents/node_modules/
+agents/.env
+agents/data/

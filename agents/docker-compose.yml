@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  agents:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./data:/app/data
