@@ -50,6 +50,13 @@ const highlights = [
   { stat: '1000+', label: 'Years of History' },
   { stat: '4.8/5', label: 'Average Rating' },
 ];
+
+const regionDescriptions: Record<string, string> = {
+  Scotland: 'From brooding Highland fortresses to elegant baronial estates perched on misty lochs, Scotland offers the quintessential castle experience — wild, romantic, and utterly unforgettable.',
+  England: 'England\'s castles span nearly a thousand years of history. Stay within Norman strongholds, Tudor palaces, and Victorian follies amid rolling countryside and ancient forests.',
+  Wales: 'More castles per square mile than anywhere in Europe. Welsh castle stays offer extraordinary value, dramatic mountain landscapes, and a rich Celtic heritage.',
+  'Northern Ireland': 'Historic lakeside estates and dramatic coastal fortresses blend Irish warmth with breathtaking landscapes. Experience hospitality that has welcomed poets and princes for centuries.',
+};
 ---
 
 <BaseLayout title="Home" description="RentACastle - Britain's largest castle rental directory. Discover stunning castles to rent across Scotland, England, Wales, and Northern Ireland. From medieval fortresses to fairytale towers.">
@@ -83,33 +90,28 @@ const highlights = [
   <section class="hero" id="hero">
     <div class="hero-slides">
       <img
-        src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=75&fm=webp"
-        srcset="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=640&q=75&fm=webp 640w, https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=75&fm=webp 1200w"
-        sizes="100vw"
+        src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1400&q=80"
         alt="Majestic Scottish castle on a loch at sunset"
         class="hero-slide active"
         fetchpriority="high"
-        width="1200"
-        height="800"
+        width="1400"
+        height="933"
       />
-      <img src="https://images.unsplash.com/photo-1534954553104-88cb75be7648?w=1200&q=75&fm=webp" alt="Historic English castle surrounded by gardens" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=1200&q=75&fm=webp" alt="Medieval castle tower against dramatic sky" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1564429238961-bf8fd03a3776?w=1200&q=75&fm=webp" alt="Castle interior with grand fireplace and period furnishings" class="hero-slide" loading="lazy" width="1200" height="800" />
-      <img src="https://images.unsplash.com/photo-1570214476695-19bd467e3636?w=1200&q=75&fm=webp" alt="Fairytale castle among rolling British hills" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=1400&q=80" alt="Grand castle estate at twilight" class="hero-slide" loading="lazy" width="1400" height="933" />
+      <img src="https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1400&q=80" alt="Medieval castle tower against dramatic sky" class="hero-slide" loading="lazy" width="1400" height="933" />
+      <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1400&q=80" alt="Castle shrouded in mist at dawn" class="hero-slide" loading="lazy" width="1400" height="933" />
+      <img src="https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=1400&q=80" alt="Fairytale castle among rolling British hills" class="hero-slide" loading="lazy" width="1400" height="933" />
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Britain's Largest Castle Rental Directory</p>
-      <h1>Rent a Castle<br/><span class="hero-accent">Anywhere in the UK</span></h1>
-      <p class="hero-sub">Discover Britain's most extraordinary stays. From medieval fortresses to fairytale towers, find your perfect castle rental.</p>
+      <div class="hero-gold-line"></div>
+      <h1>Rent a Castle<br/><span class="hero-accent">in the United Kingdom</span></h1>
+      <p class="hero-sub">Extraordinary stays in Britain's most storied estates. From medieval fortresses to fairytale towers — discover a world of timeless grandeur.</p>
       <div class="hero-buttons">
-        <a href="/castles" class="btn btn-accent">Browse Castles</a>
-        <a href="/castles?type=wedding" class="btn btn-outline" style="border-color: white; color: white;">Wedding Venues</a>
+        <a href="/castles" class="btn btn-gold">Explore Castles</a>
+        <a href="/regions" class="btn btn-ghost">View Regions</a>
       </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Scroll to explore</span>
-      <div class="scroll-arrow"></div>
     </div>
   </section>
 
@@ -130,19 +132,20 @@ const highlights = [
   <!-- Categories: Explore by Type -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="badge">Castle Types</span>
+      <div class="section-header-premium">
+        <div class="section-gold-line"></div>
         <h2>Explore by Type</h2>
         <p>Whether you're planning a wedding, a family reunion, or a romantic escape, we have the perfect castle for you.</p>
       </div>
       <div class="grid grid-3">
         {categories.map(cat => (
-          <a href={cat.href} class="category-card card">
-            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" width="600" height="400" />
-            <div class="card-body">
-              <h3>{cat.title}</h3>
-              <p>{cat.description}</p>
-              <span class="card-link">Explore →</span>
+          <a href={cat.href} class="category-card">
+            <div class="category-card-image">
+              <img src={cat.image} alt={cat.title} loading="lazy" width="600" height="800" />
+              <div class="category-card-overlay">
+                <h3 class="category-card-title">{cat.title}</h3>
+                <span class="category-card-link">Explore</span>
+              </div>
             </div>
           </a>
         ))}
@@ -150,107 +153,124 @@ const highlights = [
     </div>
   </section>
 
-  <!-- Region Cards -->
-  <section class="section" style="background: var(--color-bg-alt);">
+  <!-- Regions: Featured Editorial -->
+  <section class="section section-regions">
     <div class="container">
-      <div class="section-header">
-        <span class="badge">Regions</span>
+      <div class="section-header-premium">
+        <div class="section-gold-line"></div>
         <h2>Explore by Region</h2>
         <p>From the Scottish Highlands to the Welsh valleys, each region offers a unique castle experience.</p>
       </div>
-      <div class="grid grid-2">
-        {regions.map(region => {
+
+      {/* First two regions: alternating full-width editorial layout */}
+      {regions.slice(0, 2).map((region, i) => {
+        const count = castles.filter(c => c.region === region.name).length;
+        const desc = regionDescriptions[region.name] || region.description;
+        return (
+          <div class={`region-editorial ${i % 2 !== 0 ? 'region-editorial--reverse' : ''}`}>
+            <div class="region-editorial-image">
+              <img src={region.image} alt={`Castles in ${region.name}`} loading="lazy" width="800" height="600" />
+            </div>
+            <div class="region-editorial-content">
+              <span class="region-editorial-count">{count} Castle{count !== 1 ? 's' : ''}</span>
+              <h3>{region.name}</h3>
+              <p>{desc}</p>
+              <a href={`/regions/${region.slug}`} class="btn btn-gold">Discover {region.name}</a>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Remaining regions: grid */}
+      <div class="grid grid-2 region-grid-bottom">
+        {regions.slice(2).map(region => {
           const count = castles.filter(c => c.region === region.name).length;
+          const desc = regionDescriptions[region.name] || region.description;
           return (
-            <a href={`/regions/${region.slug}`} class="region-card card">
-              <div class="region-img-wrap">
-                <img src={region.image} alt={`Castles in ${region.name}`} class="card-image region-image" loading="lazy" width="600" height="400" />
-                <div class="region-overlay-tag">
-                  <span class="region-count">{count} Castle{count !== 1 ? 's' : ''}</span>
-                </div>
+            <div class="region-grid-card">
+              <div class="region-grid-card-image">
+                <img src={region.image} alt={`Castles in ${region.name}`} loading="lazy" width="600" height="400" />
               </div>
-              <div class="card-body">
+              <div class="region-grid-card-content">
+                <span class="region-editorial-count">{count} Castle{count !== 1 ? 's' : ''}</span>
                 <h3>{region.name}</h3>
-                <p>{region.description.slice(0, 120)}...</p>
-                <span class="card-link">Explore {region.name} →</span>
+                <p>{desc}</p>
+                <a href={`/regions/${region.slug}`} class="btn btn-gold btn--sm">Discover {region.name}</a>
               </div>
-            </a>
+            </div>
           );
         })}
       </div>
     </div>
   </section>
 
-  <!-- List Your Castle CTA -->
-  <section class="section">
-    <div class="container">
-      <div class="partners-cta">
-        <div class="partners-cta-content">
-          <span class="badge">Own a Castle?</span>
-          <h2>Partner With Us</h2>
-          <p>List your castle on Britain's fastest-growing castle rental directory. Reach thousands of travellers looking for their perfect castle stay. Join our network of exceptional heritage properties.</p>
-          <a href="/partners" class="btn btn-accent">List Your Castle →</a>
-        </div>
-      </div>
+  <!-- Partners CTA: Full-bleed Dark Section -->
+  <section class="partners-section">
+    <div class="partners-bg">
+      <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1400&q=80" alt="" loading="lazy" width="1400" height="600" />
+    </div>
+    <div class="partners-overlay"></div>
+    <div class="container partners-inner">
+      <span class="partners-eyebrow">Castle Owners</span>
+      <h2>Own a Historic Property?</h2>
+      <p>Join Britain's most prestigious castle rental directory. Reach thousands of discerning travellers seeking extraordinary heritage stays.</p>
+      <a href="/partners" class="btn btn-gold">List Your Castle</a>
     </div>
   </section>
 
   <!-- Featured Guides -->
   {featuredPosts.length > 0 && (
-    <section class="section" style="background: var(--color-bg-alt);">
+    <section class="section section-guides">
       <div class="container">
-        <div class="section-header">
-          <span class="badge">Castle Guides</span>
+        <div class="section-header-premium">
+          <div class="section-gold-line"></div>
           <h2>Plan Your Castle Stay</h2>
           <p>Expert guides and insider tips to help you choose and book the perfect castle rental.</p>
         </div>
         <div class="grid grid-4">
           {featuredPosts.map(post => (
-            <a href={`/blog/${post.slug}`} class="guide-card card">
-              <img src={post.image} alt={post.title} class="card-image guide-image" loading="lazy" />
-              <div class="card-body">
-                <span class="tag">{post.category}</span>
+            <a href={`/blog/${post.slug}`} class="guide-card">
+              <div class="guide-card-image">
+                <img src={post.image} alt={post.title} loading="lazy" />
+              </div>
+              <div class="guide-card-body">
+                <span class="guide-tag">{post.category}</span>
                 <h3 class="guide-title">{post.title}</h3>
-                <span class="card-link">{post.readTime} →</span>
+                <span class="guide-read-time">{post.readTime}</span>
               </div>
             </a>
           ))}
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <a href="/blog" class="btn btn-outline">View All Guides →</a>
+        <div style="text-align: center; margin-top: 2.5rem;">
+          <a href="/blog" class="btn btn-outline">View All Guides</a>
         </div>
       </div>
     </section>
   )}
 
-  <!-- Bottom CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-card">
-        <div class="cta-content">
-          <span class="badge">Start Exploring</span>
-          <h2>Ready to Stay in a Castle?</h2>
-          <p>Browse our complete collection of castle rentals across the United Kingdom. From medieval fortresses to romantic tower houses, your perfect castle stay awaits.</p>
-          <a href="/castles" class="btn btn-accent">Browse All Castles →</a>
-        </div>
-        <img
-          src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=600&q=75&fm=webp"
-          alt="Beautiful castle in the British countryside"
-          class="cta-image"
-          loading="lazy"
-          width="600"
-          height="400"
-        />
-      </div>
+  <!-- Bottom CTA: Full-bleed Cinematic -->
+  <section class="bottom-cta">
+    <div class="bottom-cta-bg">
+      <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1400&q=80" alt="" loading="lazy" width="1400" height="600" />
+    </div>
+    <div class="bottom-cta-overlay"></div>
+    <div class="container bottom-cta-inner">
+      <p class="bottom-cta-eyebrow">Begin Your Journey</p>
+      <h2>Your Castle Awaits</h2>
+      <p class="bottom-cta-text">Browse our curated collection of castle rentals across the United Kingdom. From medieval fortresses to romantic tower houses — extraordinary experiences await within ancient walls.</p>
+      <a href="/castles" class="btn btn-gold btn--lg">Explore All Castles</a>
     </div>
   </section>
 </BaseLayout>
 
 <style>
+  /* ========================================
+     HERO — Cinematic Full Viewport
+     ======================================== */
   .hero {
     position: relative;
     height: 100vh;
-    min-height: 650px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,9 +293,9 @@ const highlights = [
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    transform: scale(1.05);
-    animation: heroZoom 8s ease-in-out infinite alternate;
+    transition: opacity 2s ease-in-out;
+    transform: scale(1.04);
+    animation: heroZoom 10s ease-in-out infinite alternate;
   }
 
   .hero-slide.active {
@@ -284,97 +304,146 @@ const highlights = [
 
   @keyframes heroZoom {
     from { transform: scale(1); }
-    to { transform: scale(1.08); }
+    to { transform: scale(1.06); }
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(26,58,42,0.5) 50%, rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(15, 10, 20, 0.3) 0%,
+      rgba(15, 10, 20, 0.45) 40%,
+      rgba(15, 10, 20, 0.75) 100%
+    );
     z-index: 1;
   }
 
   .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 860px;
     padding: 0 1.5rem;
   }
 
   .hero-eyebrow {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     color: var(--color-accent);
-    margin-bottom: 1rem;
-    opacity: 1 !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-gold-line {
+    width: 60px;
+    height: 1px;
+    background: var(--color-accent);
+    margin: 0 auto 2rem;
   }
 
   .hero-content h1 {
     color: var(--color-white);
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    margin: 0 0 1.25rem;
-    line-height: 1.1;
-    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 60px rgba(0, 0, 0, 0.4);
   }
 
   .hero-accent {
     color: var(--color-accent);
+    font-weight: 400;
+    font-style: italic;
   }
 
   .hero-sub {
-    font-size: 1.15rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 3rem;
     line-height: 1.8;
-    max-width: 600px;
+    max-width: 560px;
     margin-left: auto;
     margin-right: auto;
+    letter-spacing: 0.01em;
   }
 
   .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
+  .btn-gold {
+    display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.9rem 2rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+    line-height: 1;
+    border-radius: 0;
+    border: 2px solid var(--color-accent);
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+    transition: all var(--transition-base);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
   }
 
-  .scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid rgba(255,255,255,0.5);
-    border-bottom: 2px solid rgba(255,255,255,0.5);
-    transform: rotate(45deg);
-    animation: scrollBounce 2s ease infinite;
+  .btn-gold:hover {
+    background-color: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+    color: var(--color-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 30px rgba(201, 165, 78, 0.3);
   }
 
-  @keyframes scrollBounce {
-    0%, 100% { transform: rotate(45deg) translateY(0); }
-    50% { transform: rotate(45deg) translateY(6px); }
-  }
-
-  .stats-bar {
-    background: var(--color-primary);
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 0.9rem 2rem;
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1;
+    border-radius: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
     color: var(--color-white);
-    padding: 2.5rem 0;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--color-white);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    transform: translateY(-1px);
+  }
+
+  /* ========================================
+     STATS BAR — Refined Dark
+     ======================================== */
+  .stats-bar {
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 3rem 0;
     margin-top: -2px;
+    border-top: 1px solid var(--color-accent);
+    border-bottom: 1px solid rgba(201, 165, 78, 0.3);
   }
 
   .stats-grid {
@@ -387,140 +456,499 @@ const highlights = [
   .stat-number {
     display: block;
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-accent);
+    line-height: 1;
   }
 
   .stat-label {
-    font-size: 0.85rem;
-    opacity: 0.8;
-    margin-top: 0.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.6;
+    margin-top: 0.75rem;
     display: block;
   }
 
+  /* ========================================
+     SECTION HEADERS — Premium Style
+     ======================================== */
+  .section-header-premium {
+    text-align: center;
+    margin-bottom: var(--space-3xl);
+  }
+
+  .section-gold-line {
+    width: 50px;
+    height: 1px;
+    background: var(--color-accent);
+    margin: 0 auto 1.5rem;
+  }
+
+  .section-header-premium h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .section-header-premium p {
+    font-size: var(--text-lg);
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ========================================
+     CATEGORIES — Editorial Overlay Cards
+     ======================================== */
   .category-card {
     display: block;
-  }
-
-  .category-card .card-image {
-    height: 220px;
-  }
-
-  .card-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    font-size: 0.9rem;
-  }
-
-  .region-card {
-    display: block;
-  }
-
-  .region-img-wrap {
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
     position: relative;
+  }
+
+  .category-card-image {
+    position: relative;
+    aspect-ratio: 3 / 4;
     overflow: hidden;
   }
 
-  .region-image {
-    height: 240px;
-    transition: transform 0.3s ease;
-  }
-
-  .region-card:hover .region-image {
-    transform: scale(1.05);
-  }
-
-  .region-overlay-tag {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 1rem;
-    background: linear-gradient(transparent, rgba(0,0,0,0.5));
-  }
-
-  .region-count {
-    display: inline-block;
-    background: var(--color-accent);
-    color: var(--color-white);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 0.25rem 0.6rem;
-    border-radius: 4px;
-  }
-
-  .partners-cta {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    border-radius: var(--radius);
-    padding: 3rem;
-    color: var(--color-white);
-  }
-
-  .partners-cta h2 {
-    color: var(--color-white);
-    margin: 0.5rem 0 1rem;
-  }
-
-  .partners-cta p {
-    opacity: 0.85;
-    margin-bottom: 1.5rem;
-    max-width: 600px;
-  }
-
-  .cta-section {
-    padding: 2rem 0 4rem;
-  }
-
-  .cta-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--color-primary);
-    border-radius: var(--radius);
-    overflow: hidden;
-    color: var(--color-white);
-  }
-
-  .cta-content {
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .cta-content h2 {
-    color: var(--color-white);
-    margin: 0.5rem 0 1rem;
-  }
-
-  .cta-content p {
-    opacity: 0.85;
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-  }
-
-  .cta-image {
+  .category-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    min-height: 300px;
+    transition: transform 0.6s ease;
   }
 
-  .guide-card { display: block; }
-  .guide-image { height: 160px; }
-  .guide-title { font-size: 1rem; line-height: 1.4; }
+  .category-card:hover .category-card-image img {
+    transform: scale(1.05);
+  }
+
+  .category-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 1.5rem;
+    background: linear-gradient(
+      180deg,
+      transparent 40%,
+      rgba(15, 10, 20, 0.85) 100%
+    );
+  }
+
+  .category-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .category-card-link {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+  }
+
+  .category-card:hover .category-card-link {
+    color: var(--color-accent-light);
+  }
+
+  /* ========================================
+     REGIONS — Editorial Layout
+     ======================================== */
+  .section-regions {
+    background: var(--color-bg-alt);
+  }
+
+  .region-editorial {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 0;
+    margin-bottom: 1px;
+    min-height: 480px;
+    background: var(--color-white);
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-xl);
+  }
+
+  .region-editorial--reverse {
+    direction: rtl;
+  }
+
+  .region-editorial--reverse > * {
+    direction: ltr;
+  }
+
+  .region-editorial-image {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .region-editorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .region-editorial:hover .region-editorial-image img {
+    transform: scale(1.03);
+  }
+
+  .region-editorial-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem;
+  }
+
+  .region-editorial-count {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+  }
+
+  .region-editorial-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+
+  .region-editorial-content p {
+    color: var(--color-text-light);
+    font-size: var(--text-base);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  /* Region grid cards (bottom two) */
+  .region-grid-bottom {
+    margin-top: var(--space-xl);
+  }
+
+  .region-grid-card {
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+  }
+
+  .region-grid-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .region-grid-card-image {
+    overflow: hidden;
+    height: 260px;
+  }
+
+  .region-grid-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .region-grid-card:hover .region-grid-card-image img {
+    transform: scale(1.03);
+  }
+
+  .region-grid-card-content {
+    padding: 2rem 2rem 2.5rem;
+  }
+
+  .region-grid-card-content h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .region-grid-card-content p {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ========================================
+     PARTNERS CTA — Full-bleed Dark
+     ======================================== */
+  .partners-section {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .partners-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .partners-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .partners-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 10, 20, 0.82);
+  }
+
+  .partners-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .partners-eyebrow {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .partners-inner h2 {
+    color: var(--color-white);
+    font-size: var(--text-4xl);
+    margin-bottom: 1.25rem;
+  }
+
+  .partners-inner p {
+    font-size: var(--text-lg);
+    opacity: 0.8;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  /* ========================================
+     FEATURED GUIDES — Clean Design
+     ======================================== */
+  .section-guides {
+    background: var(--color-bg);
+  }
+
+  .guide-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+  }
+
+  .guide-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  .guide-card-image {
+    overflow: hidden;
+    height: 180px;
+  }
+
+  .guide-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .guide-card:hover .guide-card-image img {
+    transform: scale(1.05);
+  }
+
+  .guide-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  .guide-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+    flex: 1;
+  }
+
+  .guide-read-time {
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+  }
+
+  /* ========================================
+     BOTTOM CTA — Full-bleed Cinematic
+     ======================================== */
+  .bottom-cta {
+    position: relative;
+    padding: 8rem 0;
+    overflow: hidden;
+    text-align: center;
+    color: var(--color-white);
+  }
+
+  .bottom-cta-bg {
+    position: absolute;
+    inset: 0;
+  }
+
+  .bottom-cta-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bottom-cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(15, 10, 20, 0.6) 0%,
+      rgba(15, 10, 20, 0.8) 100%
+    );
+  }
+
+  .bottom-cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 660px;
+    margin: 0 auto;
+  }
+
+  .bottom-cta-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .bottom-cta-inner h2 {
+    color: var(--color-white);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .bottom-cta-text {
+    font-size: var(--text-lg);
+    font-weight: 300;
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .region-editorial {
+      grid-template-columns: 1fr 1fr;
+      min-height: 400px;
+    }
+
+    .region-editorial-content {
+      padding: 2.5rem;
+    }
+  }
 
   @media (max-width: 768px) {
-    .hero { height: 85vh; min-height: 550px; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .cta-card { grid-template-columns: 1fr; }
-    .cta-image { max-height: 250px; }
-    .partners-cta { padding: 2rem; }
-    .hero-scroll-hint { display: none; }
+    .hero {
+      height: 90vh;
+      min-height: 600px;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+    }
+
+    .region-editorial {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .region-editorial--reverse {
+      direction: ltr;
+    }
+
+    .region-editorial-image {
+      height: 280px;
+    }
+
+    .region-editorial-content {
+      padding: 2rem;
+    }
+
+    .partners-section {
+      padding: 4rem 0;
+    }
+
+    .bottom-cta {
+      padding: 5rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 2.25rem;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+    }
+
+    .btn-gold,
+    .btn-ghost {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.75rem;
+    }
   }
 </style>
 
@@ -531,5 +959,5 @@ const highlights = [
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 5000);
+  }, 7000);
 </script>

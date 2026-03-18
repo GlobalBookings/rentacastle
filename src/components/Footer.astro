@@ -15,10 +15,9 @@ const planLinks = [
   { name: 'How It Works', href: '/guides/how-to-rent-a-castle/' },
   { name: 'Partners', href: '/partners' },
   { name: 'FAQ', href: '/faq/' },
-  { name: 'Packing List', href: '/guides/packing-list/' },
 ];
 
-const infoLinks = [
+const usefulLinks = [
   { name: 'English Heritage', href: 'https://www.english-heritage.org.uk/', external: true },
   { name: 'Historic Houses', href: 'https://www.historichouses.org/', external: true },
   { name: 'National Trust', href: 'https://www.nationaltrust.org.uk/', external: true },
@@ -32,9 +31,14 @@ const infoLinks = [
       <!-- About Column -->
       <div class="footer-col footer-col--about">
         <a href="/" class="footer-logo" aria-label="RentACastle Home">
-          <span class="footer-logo__icon">&#127984;</span>
+          <span class="footer-logo__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 21h18M4 21V10l2-2V4h2v4l2-2V3h2v3l2 2V4h2v4l2 2v11"/>
+            </svg>
+          </span>
           <span class="footer-logo__text">RentACastle</span>
         </a>
+        <p class="footer-tagline-text">Extraordinary stays in Britain's finest castles</p>
         <p class="footer-about">
           Discover and rent stunning castles across the United Kingdom. From the misty Scottish Highlands to the rolling English countryside, we connect you with Britain's most extraordinary castle stays.
         </p>
@@ -50,9 +54,9 @@ const infoLinks = [
         </ul>
       </div>
 
-      <!-- Plan Your Stay Column -->
+      <!-- Plan Column -->
       <div class="footer-col">
-        <h3 class="footer-heading">Plan Your Stay</h3>
+        <h3 class="footer-heading">Plan</h3>
         <ul class="footer-links">
           {planLinks.map((link) => (
             <li><a href={link.href}>{link.name}</a></li>
@@ -60,11 +64,11 @@ const infoLinks = [
         </ul>
       </div>
 
-      <!-- Info Column -->
+      <!-- Useful Links Column -->
       <div class="footer-col">
         <h3 class="footer-heading">Useful Links</h3>
         <ul class="footer-links">
-          {infoLinks.map((link) => (
+          {usefulLinks.map((link) => (
             <li>
               <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>
                 {link.name}
@@ -85,62 +89,87 @@ const infoLinks = [
       <p class="footer-copyright">
         &copy; {currentYear} RentACastle. All rights reserved.
       </p>
-      <p class="footer-tagline">Your gateway to Britain's most extraordinary stays.</p>
+      <p class="footer-heritage">Proudly showcasing Britain's heritage</p>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background-color: var(--color-primary);
-    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--color-dark, #0f0a14);
+    color: rgba(255, 255, 255, 0.75);
     padding: var(--space-4xl) 0 var(--space-xl);
+    border-top: 2px solid var(--color-accent);
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-3xl);
     margin-bottom: var(--space-3xl);
   }
 
-  /* Logo */
+  /* ========================================
+     Footer Logo — Larger with Tagline
+     ======================================== */
   .footer-logo {
     display: inline-flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0.65rem;
     text-decoration: none;
     color: var(--color-white);
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: var(--text-xl);
-    margin-bottom: var(--space-md);
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-sm);
+    transition: color var(--transition-fast);
   }
 
   .footer-logo:hover {
-    color: var(--color-accent-light);
+    color: var(--color-accent);
   }
 
   .footer-logo__icon {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
     line-height: 1;
+    color: var(--color-accent);
   }
 
-  /* About */
+  .footer-logo__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer-tagline-text {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--text-base);
+    color: var(--color-accent);
+    margin: 0 0 var(--space-lg);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+  }
+
+  /* ========================================
+     About
+     ======================================== */
   .footer-about {
     font-size: var(--text-sm);
-    line-height: 1.7;
-    color: rgba(255, 255, 255, 0.65);
-    margin-top: var(--space-md);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
   }
 
-  /* Headings */
+  /* ========================================
+     Column Headings
+     ======================================== */
   .footer-heading {
     font-family: var(--font-heading);
     font-size: var(--text-base);
     font-weight: 600;
     color: var(--color-white);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
     position: relative;
     padding-bottom: var(--space-sm);
   }
@@ -150,43 +179,53 @@ const infoLinks = [
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 30px;
+    width: 28px;
     height: 2px;
     background-color: var(--color-accent);
   }
 
-  /* Links */
+  /* ========================================
+     Footer Links — Lighter Weight, More Spacing
+     ======================================== */
   .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-md);
   }
 
   .footer-links a {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.55);
     font-size: var(--text-sm);
+    font-weight: 400;
     text-decoration: none;
     transition: all var(--transition-fast);
   }
 
   .footer-links a:hover {
-    color: var(--color-accent-light);
+    color: var(--color-accent);
     padding-left: 4px;
   }
 
   .external-icon {
-    opacity: 0.5;
+    opacity: 0.4;
+    transition: opacity var(--transition-fast);
   }
 
-  /* Footer Bottom */
+  .footer-links a:hover .external-icon {
+    opacity: 0.7;
+  }
+
+  /* ========================================
+     Footer Bottom
+     ======================================== */
   .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: var(--space-xl);
     display: flex;
     align-items: center;
@@ -197,19 +236,22 @@ const infoLinks = [
 
   .footer-copyright {
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     margin: 0;
   }
 
-  .footer-tagline {
+  .footer-heritage {
     font-family: var(--font-heading);
     font-style: italic;
     font-size: var(--text-sm);
     color: var(--color-accent);
     margin: 0;
+    letter-spacing: 0.01em;
   }
 
-  /* Responsive */
+  /* ========================================
+     Responsive
+     ======================================== */
   @media (max-width: 1024px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;
