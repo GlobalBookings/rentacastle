@@ -23,7 +23,7 @@ const siteName = 'RentACastle';
 const pageTitle = title === 'Home'
   ? 'RentACastle - Rent a Castle Anywhere in the UK'
   : `${title} | RentACastle`;
-const siteUrl = 'https://rentacastle.co.uk';
+const siteUrl = 'https://rentacastle.uk';
 const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
 const resolvedImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 ---

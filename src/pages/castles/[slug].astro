@@ -31,7 +31,7 @@ const castleSchema = {
   ...(castle.reviewScore ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: castle.reviewScore, bestRating: 10, reviewCount: castle.reviewCount || 1 } } : {}),
   ...(castle.lat && castle.lng ? { geo: { '@type': 'GeoCoordinates', latitude: castle.lat, longitude: castle.lng } } : {}),
   amenityFeature: castle.amenities?.map(a => ({ '@type': 'LocationFeatureSpecification', name: a, value: true })) || [],
-  url: `https://rentacastle.co.uk/castles/${castle.slug}`,
+  url: `https://rentacastle.uk/castles/${castle.slug}`,
 };
 ---
 
