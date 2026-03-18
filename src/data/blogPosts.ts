@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'scottish-castle-hotels-5-star',
+    title: '5 Star Scottish Castle Hotels: Luxurious Stays in 2026',
+    description: 'Discover Britain\'s finest 5-star Scottish castle hotels for 2026. Experience luxury accommodation in historic fortresses with world-class amenities and service.',
+    date: '2026-03-18',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'dalhousie-castle',
+    title: 'Sleep Like Royalty at Dalhousie Castle: Scotland\'s Premier Stay',
+    description: 'Experience royal luxury at Dalhousie Castle, Scotland\'s most prestigious castle hotel. Book your regal getaway in this historic 13th-century fortress.',
+    date: '2026-03-18',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1585231474241-c8340c2b2c65?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'luxury-castle-holiday-uk',
+    title: 'Live Like Royalty: Luxury Castle Holidays UK 2026 Guide',
+    description: 'Experience the ultimate luxury with our 2026 guide to castle holidays across the UK. Discover magnificent properties, royal treatments, and unforgettable stays.',
+    date: '2026-03-18',
+    category: 'Luxury',
+    image: 'https://images.unsplash.com/photo-1449452198679-05c7fd30f416?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'best-castles-to-rent-in-scotland-2026',
     title: 'Best Castles to Rent in Scotland for 2026',
     description:
