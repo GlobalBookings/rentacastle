@@ -1,6 +1,6 @@
 name: rentacastle-agents
 region: lon
-workers:
+services:
   - name: agent-runner
     github:
       repo: GlobalBookings/rentacastle
@@ -10,6 +10,14 @@ workers:
     dockerfile_path: Dockerfile
     instance_count: 1
     instance_size_slug: apps-s-1vcpu-0.5gb
+    http_port: 8080
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 10
+      period_seconds: 30
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
     envs:
       - key: ANTHROPIC_API_KEY
         scope: RUN_TIME
