@@ -86,7 +86,7 @@ export const blogPosts: BlogPost[] = [
       'Make this Christmas truly magical with a festive castle stay. From roaring log fires and decorated great halls to carol concerts and Christmas feasts, these castles offer the ultimate seasonal experience.',
     date: '2026-02-15',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1576413326613-fcc00645c501?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1553434320-e9f5757140b1?w=800&q=80',
     readTime: '8 min read',
   },
   {
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
       'Heading to a castle for the first time? Don\'t forget the essentials. Our packing list covers everything from warm layers for draughty corridors to torches for midnight explorations.',
     date: '2026-01-22',
     category: 'Tips',
-    image: 'https://images.unsplash.com/photo-1553696671-7ada1d38c519?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     readTime: '4 min read',
   },
   {

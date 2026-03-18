@@ -49,7 +49,7 @@ export const castles: Castle[] = [
     sleeps: 10,
     bedrooms: 5,
     bathrooms: 4,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.barcaldinecastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     description: 'A stunning 16th-century Scottish tower house set amid the dramatic landscapes of Argyll, offering exclusive-use self-catering accommodation.',
     highlights: [
@@ -128,7 +128,7 @@ The surrounding area is a paradise for outdoor enthusiasts, with hillwalking, ka
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.amberleycastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
     description: 'A luxury 900-year-old castle hotel in the South Downs, offering fine dining and elegant rooms within medieval walls and a working portcullis.',
     highlights: [
@@ -208,7 +208,7 @@ Whether you're celebrating a milestone anniversary, planning an intimate wedding
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.langleycastle.com/',
     image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     description: 'A genuine 14th-century medieval castle hotel near Hadrian\'s Wall, featuring 7-foot-thick walls, window seats, and an award-winning restaurant.',
     highlights: [
@@ -287,7 +287,7 @@ Langley Castle's location makes it the perfect base for exploring Northumberland
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.stayinacastle.com/',
     image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     description: 'A family-friendly Victorian folly castle in the Eden Valley offering eclectic, individually designed rooms and a relaxed house-party atmosphere.',
     highlights: [
@@ -367,7 +367,7 @@ The Eden Valley location is one of England's best-kept secrets, offering stunnin
     sleeps: 6,
     bedrooms: 3,
     bathrooms: 2,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.dairsiecastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     description: 'A beautifully restored 16th-century tower house in the Kingdom of Fife, offering intimate self-catering accommodation near St Andrews.',
     highlights: [
@@ -444,7 +444,7 @@ The castle's location in Fife is ideal for golfers — with St Andrews and its l
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.glenappcastle.com/',
     image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A 5-star Scottish baronial castle hotel on the Ayrshire coast with 36 acres of gardens, views to Ailsa Craig, and Michelin-worthy dining.',
     highlights: [
@@ -524,7 +524,7 @@ Beyond the castle walls, Glenapp offers a wealth of experiences that take full a
     sleeps: 40,
     bedrooms: 18,
     bathrooms: 14,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.dundascastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     description: 'A grand exclusive-use castle estate near Edinburgh, perfect for luxury weddings, corporate events, and large group celebrations.',
     highlights: [
@@ -604,7 +604,7 @@ The castle's proximity to Edinburgh makes it uniquely versatile. Guests can enjo
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.tullochcastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
     description: 'A 12th-century Highland castle hotel in Dingwall offering comfortable rooms, a lively bar, and easy access to the NC500 route.',
     highlights: [
@@ -681,7 +681,7 @@ Tulloch Castle's location is one of its greatest assets. Dingwall sits at the st
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.thornburycastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     description: 'England\'s only Tudor castle hotel, where Henry VIII and Anne Boleyn once stayed, featuring vineyard gardens and fine dining.',
     highlights: [
@@ -760,7 +760,7 @@ The castle sits at a geographical crossroads between some of England's most popu
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.craigynoscastle.com/',
     image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     description: 'A Gothic Revival castle in the Brecon Beacons, once home to opera singer Adelina Patti, featuring a private theatre and affordable castle stays.',
     highlights: [
@@ -838,7 +838,7 @@ The castle's location in the Brecon Beacons is a major draw. The national park o
     sleeps: 16,
     bedrooms: 8,
     bathrooms: 6,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.fonmoncastle.com/',
     image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'One of the few inhabited medieval castles in Wales, offering exclusive-use accommodation with stunning gardens and heritage coast nearby.',
     highlights: [
@@ -917,7 +917,7 @@ Fonmon's gardens are a highlight in themselves. The walled garden, herbaceous bo
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.peckfortoncastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     description: 'A dramatic Victorian castle perched on a Cheshire hilltop, renowned as one of England\'s finest wedding and events venues with luxury hotel rooms.',
     highlights: [
@@ -996,7 +996,7 @@ Peckforton's facilities extend beyond accommodation and dining. An indoor swimmi
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.lumleycastle.com/',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     description: 'A spectacular 14th-century castle hotel overlooking Durham Cricket Ground, offering Elizabethan banquets and luxury rooms in County Durham.',
     highlights: [
@@ -1075,7 +1075,7 @@ The castle's location in County Durham provides easy access to some of the regio
     sleeps: 30,
     bedrooms: 14,
     bathrooms: 12,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.scone-palace.co.uk/',
     image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
     description: 'The historic crowning place of Scottish kings, offering exclusive-use accommodation in one of Scotland\'s most important heritage properties.',
     highlights: [
@@ -1154,7 +1154,7 @@ The palace's setting in Perthshire — often called the "gateway to the Highland
     sleeps: 24,
     bedrooms: 12,
     bathrooms: 10,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.aldouriecastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     description: 'The only habitable castle on the shores of Loch Ness, offering ultra-luxury exclusive-use accommodation with a butler service and private grounds.',
     highlights: [
@@ -1234,7 +1234,7 @@ Every detail at Aldourie is tailored to your group. The butler can arrange anyth
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.ruthincastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     description: 'A Welsh castle hotel set within the ruins of a 13th-century fortress, offering medieval banquets and comfortable rooms in the Vale of Clwyd.',
     highlights: [
@@ -1313,7 +1313,7 @@ The castle's leisure facilities include an indoor swimming pool, sauna, and spa 
     sleeps: 5,
     bedrooms: 2,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.warwick-castle.com/short-breaks/',
     image: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     description: 'Stay in themed medieval lodges on the grounds of the iconic Warwick Castle, with access to shows, attractions, and the castle itself.',
     highlights: [
@@ -1391,7 +1391,7 @@ Beyond the castle, the location in the heart of Warwickshire provides easy acces
     sleeps: 4,
     bedrooms: 2,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.bamburghcastle.com/',
     image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
     description: 'A charming self-catering cottage at the foot of mighty Bamburgh Castle, one of the most spectacular castle settings in all of England.',
     highlights: [
@@ -1468,7 +1468,7 @@ The wider Northumberland coast is an Area of Outstanding Natural Beauty, and fro
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.castleofmey.org.uk/granary-lodge/',
     image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Stay in the lovingly converted Granary Lodge on the grounds of the Castle of Mey, the late Queen Mother\'s beloved Highland retreat.',
     highlights: [
@@ -1545,7 +1545,7 @@ Staying at the Castle of Mey places you on the famous North Coast 500 driving ro
     sleeps: 30,
     bedrooms: 14,
     bathrooms: 12,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.carlowriecastle.co.uk/',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     description: 'An exclusive-use Scottish baronial castle near Edinburgh with 32 acres, luxury suites, and award-winning events facilities.',
     highlights: [
@@ -1624,7 +1624,7 @@ The castle's location is strategically perfect: close enough to Edinburgh for gu
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.inverlochycastlehotel.com/',
     image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     description: 'A 5-star Victorian castle hotel in the shadow of Ben Nevis, where Queen Victoria once declared she never saw a lovelier or more romantic spot.',
     highlights: [
@@ -1704,7 +1704,7 @@ Inverlochy's location at the foot of Ben Nevis and at the southern end of the Gr
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.castleleslie.com/',
     image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     description: 'A romantic Irish castle estate on the shores of Glaslough Lake, set in 1,000 acres of ancient woodland and rolling countryside.',
     highlights: [
@@ -1784,7 +1784,7 @@ Dining at Castle Leslie celebrates the finest Irish produce, with the Snaffles R
     sleeps: 2,
     bedrooms: 1,
     bathrooms: 1,
-    bookingUrl: '#',
+    bookingUrl: 'https://www.boveycastle.com/',
     image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A luxury country house hotel set in 275 acres of Dartmoor National Park, offering championship golf, spa, and family-friendly activities.',
     highlights: [
