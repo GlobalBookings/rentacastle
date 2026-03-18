@@ -1,0 +1,294 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Group Castle Booking Guide';
+const description = 'How to book a castle for a group in the UK. Tips for hen parties, birthdays, corporate retreats, and family reunions in historic castles.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: title },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1553434320-e9f5757140b1?w=1200&q=80"
+      alt="Grand castle ideal for group stays and celebrations"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Group Guide</span>
+      <h1>{title}</h1>
+      <p>Plan the perfect group castle stay — from hen parties to corporate retreats and family reunions.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        There's no better way to bring a group together than renting a castle. Whether it's a hen party, milestone birthday, corporate team-building weekend, or a family reunion, a castle provides the space, atmosphere, and sheer wow factor to make your gathering truly unforgettable. Here's everything you need to know about booking a castle for your group.
+      </p>
+
+      <!-- Planning a Group Castle Stay -->
+      <section class="guide-section">
+        <h2>Planning a Group Castle Stay</h2>
+        <p>
+          Castles are naturally designed for gathering — their great halls, expansive grounds, and multiple bedrooms make them perfect for groups. The key is matching the right castle to your type of event.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Hen and stag parties</strong> — Look for castles with good social spaces, games rooms, and perhaps a hot tub. Remote locations work well for lively celebrations where noise isn't a concern. Many castles can arrange activity days including whisky tastings, archery, and outdoor pursuits.</li>
+          <li><strong>Birthday celebrations</strong> — Choose a castle with a grand dining room for a special birthday dinner. Some castles offer bespoke catering packages, and the setting provides incredible photo opportunities for milestone birthdays.</li>
+          <li><strong>Corporate retreats</strong> — Seek castles with meeting spaces, Wi-Fi, and breakout areas. The unique environment is proven to inspire creative thinking and team bonding. Many corporate groups use castle stays for strategy days combined with team activities.</li>
+          <li><strong>Family reunions</strong> — Prioritise castles with varied bedroom configurations, family-friendly grounds, and communal spaces where everyone can gather. Castles with gardens, woodland walks, and games rooms keep all ages entertained.</li>
+        </ul>
+      </section>
+
+      <!-- How Many People? -->
+      <section class="guide-section">
+        <h2>How Many People?</h2>
+        <p>
+          Castle capacities vary enormously, so it's important to know your numbers before searching.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Small groups (2–8)</strong> — Tower houses and smaller castle properties are perfect. Intimate and affordable, these often feel like having your own private fortress.</li>
+          <li><strong>Medium groups (8–20)</strong> — The sweet spot for most castle rentals. Plenty of castles accommodate this size comfortably, with a mix of double, twin, and family rooms.</li>
+          <li><strong>Large groups (20–40+)</strong> — Grand castles with multiple wings, cottages, or annexes. These are ideal for weddings, large family gatherings, and corporate events. Some castles can accommodate 50+ guests across their estate.</li>
+        </ul>
+        <p>
+          Always check the maximum sleeping capacity on the listing. Some castles can host more people for a day event than they can accommodate overnight. If your group is larger than the castle's sleeping capacity, look for nearby B&Bs or cottages to handle the overflow.
+        </p>
+      </section>
+
+      <!-- Splitting Costs -->
+      <section class="guide-section">
+        <h2>Splitting Costs</h2>
+        <p>
+          One of the great advantages of group castle stays is how affordable they become when you split the cost. A castle that costs £2,000 per night might sound expensive, but divided among 20 guests, that's just <strong>£100 per person per night</strong> — often less than a decent hotel room.
+        </p>
+        <p>
+          Here are some tips for managing group finances:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Collect contributions early</strong> — Set up a shared fund or use a money-splitting app to collect deposits from everyone well before the booking deadline.</li>
+          <li><strong>Be transparent about costs</strong> — Share a clear breakdown of what the total covers (accommodation, catering, activities) so everyone knows what they're paying for.</li>
+          <li><strong>Consider different room tiers</strong> — Some castles have a range of room sizes. You might charge different amounts for the master suite versus a standard twin room.</li>
+          <li><strong>Budget for extras</strong> — Food, drinks, travel, and activities are usually on top of the accommodation cost. A shared kitty for communal meals and drinks works well for self-catering stays.</li>
+          <li><strong>One person books</strong> — Have one person make the official booking to avoid confusion, and have them collect payments from the rest of the group.</li>
+        </ul>
+      </section>
+
+      <!-- Activities -->
+      <section class="guide-section">
+        <h2>Activities</h2>
+        <p>
+          A castle stay provides a natural base for all sorts of group activities. Here are popular options:
+        </p>
+        <ul class="guide-list">
+          <li><strong>On-site games</strong> — Many castles have games rooms with pool tables, table tennis, and board games. Some have croquet sets, tennis courts, or cricket pitches on the grounds.</li>
+          <li><strong>Outdoor adventures</strong> — Explore castle grounds, go for countryside walks, try archery, or arrange clay pigeon shooting. Scottish castles often offer stalking and fishing.</li>
+          <li><strong>Local attractions</strong> — Visit nearby historic sites, distilleries, farmers' markets, or coastal towns. Your castle host can usually recommend the best local spots.</li>
+          <li><strong>Cooking together</strong> — In self-catering castles, cooking communal meals can be a wonderful group activity. Some castles offer cooking workshops with a professional chef.</li>
+          <li><strong>Spa and wellness</strong> — Several castles have hot tubs, saunas, or can arrange visiting massage therapists for a pamper day.</li>
+          <li><strong>Murder mystery evenings</strong> — What better setting for a murder mystery than a real castle? Several companies offer bespoke murder mystery packages for castle stays.</li>
+        </ul>
+        <p>
+          Check your <a href="/castles">castle listing</a> for specific facilities and activity options.
+        </p>
+      </section>
+
+      <!-- House Rules -->
+      <section class="guide-section">
+        <h2>House Rules</h2>
+        <p>
+          Castles are historic properties, and owners understandably have rules to protect them. Being aware of these in advance avoids any awkward surprises. Common house rules include:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Security deposits</strong> — Most castles require a damage deposit of £300–£1,000, refunded after your stay if everything is in order.</li>
+          <li><strong>Noise policies</strong> — Many castles ask for quiet hours (usually after 11 pm), especially those with neighbours or nearby residents. This is particularly important for hen and stag parties.</li>
+          <li><strong>No fireworks or Chinese lanterns</strong> — A common restriction due to fire risk and the historic nature of the buildings and grounds.</li>
+          <li><strong>Smoking</strong> — Almost all castles prohibit smoking indoors. Designated outdoor areas are usually provided.</li>
+          <li><strong>Pet policies</strong> — Some castles welcome dogs, others don't. Always check before assuming your furry friends can join the group.</li>
+          <li><strong>Check-in and check-out times</strong> — Typically 4 pm check-in and 10 am check-out. Some offer early or late options for an additional fee.</li>
+        </ul>
+        <p>
+          Read our <a href="/guides/castle-etiquette">castle etiquette guide</a> for more tips on being a great castle guest.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Ready to Book for Your Group?</h3>
+        <p>Find the perfect castle for your hen party, birthday, reunion, or corporate retreat.</p>
+        <a href="/castles" class="btn btn-accent">Browse Party Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

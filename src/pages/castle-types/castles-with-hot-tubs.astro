@@ -1,0 +1,264 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { castles } from '../../data/castles';
+
+const filtered = castles.filter(c => c.hasHotTub);
+---
+
+<BaseLayout title="Castles with Hot Tubs | RentACastle" description="Combine medieval grandeur with modern luxury. Soak in a hot tub while gazing at centuries-old castle walls and the surrounding countryside.">
+
+  <!-- Cinematic Hero -->
+  <section class="collection-hero">
+    <img src="https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=1200&q=80" alt="Luxury castle property with hot tub facilities" class="collection-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="collection-hero-overlay"></div>
+    <div class="collection-hero-content">
+      <span class="collection-hero-label">Castle Types</span>
+      <h1 class="collection-hero-title">Castles with Hot Tubs</h1>
+      <p class="collection-hero-subtitle">Combine medieval grandeur with modern luxury. Soak in a hot tub while gazing at centuries-old castle walls and the surrounding countryside.</p>
+      <div class="collection-hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- Breadcrumbs -->
+  <div class="container" style="padding-top: var(--space-lg);">
+    <Breadcrumbs items={[{ label: 'Castle Types', href: '/castle-types' }, { label: 'Castles with Hot Tubs' }]} />
+  </div>
+
+  <!-- Castle Grid -->
+  <section class="section">
+    <div class="container">
+      <p class="property-count">Showing <strong>{filtered.length}</strong> castles</p>
+
+      {filtered.length > 0 ? (
+        <div class="grid grid-3">
+          {filtered.map(castle => (
+            <a href={`/castles/${castle.slug}`} class="premium-card">
+              <div class="premium-card-gold-line"></div>
+              <div class="premium-card-img-wrap">
+                <img src={castle.image} alt={castle.name} loading="lazy" />
+                <span class="premium-region-badge">{castle.region}</span>
+              </div>
+              <div class="premium-card-body">
+                <h3 class="premium-card-name">{castle.name}</h3>
+                <p class="premium-card-type">{castle.type} <span class="premium-card-divider">|</span> {castle.county}, {castle.region}</p>
+                <div class="premium-card-footer">
+                  <span class="premium-card-price">{castle.avgPrice}</span>
+                  <span class="premium-card-sep">◆</span>
+                  <span class="premium-card-sleeps">Sleeps {castle.sleeps}</span>
+                </div>
+                <span class="premium-card-link">View Details →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>We're adding more castles to this collection. <a href="/castles">Browse all castles instead.</a></p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container" style="text-align: center;">
+      <div class="section-header">
+        <span class="collection-hero-label" style="margin-bottom: var(--space-md); display: inline-block;">Explore More</span>
+        <h2>Looking for something else?</h2>
+        <p>Browse our full collection of castle rentals across the United Kingdom.</p>
+      </div>
+      <a href="/castles" class="btn btn-primary" style="margin-top: var(--space-lg);">Browse All Castles →</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .collection-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--color-dark);
+  }
+  .collection-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+  }
+  .collection-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(26,26,26,0.5) 0%, rgba(26,26,26,0.85) 100%);
+  }
+  .collection-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: var(--space-4xl) var(--space-lg);
+  }
+  .collection-hero-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+  }
+  .collection-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+    line-height: 1.1;
+  }
+  .collection-hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.7);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .collection-hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--color-accent);
+    margin: var(--space-xl) auto 0;
+  }
+  .property-count {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: var(--space-xl);
+  }
+  .property-count strong { color: var(--color-primary); }
+  .premium-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    text-decoration: none;
+    position: relative;
+  }
+  .premium-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-6px);
+  }
+  .premium-card-gold-line {
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), var(--color-accent));
+  }
+  .premium-card-img-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+  }
+  .premium-card-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .premium-card:hover .premium-card-img-wrap img { transform: scale(1.05); }
+  .premium-region-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: rgba(26, 26, 26, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: rgba(255,255,255,0.9);
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.65rem;
+    border-radius: var(--radius-sm);
+  }
+  .premium-card-body {
+    padding: 1.25rem 1.25rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .premium-card-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+  }
+  .premium-card-type {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.85rem;
+    line-height: 1.5;
+  }
+  .premium-card-divider {
+    color: var(--color-accent);
+    margin: 0 0.15rem;
+    font-weight: 400;
+  }
+  .premium-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .premium-card-price {
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  .premium-card-sep {
+    color: var(--color-accent);
+    font-size: 0.45rem;
+    line-height: 1;
+  }
+  .premium-card-sleeps {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+  .premium-card-link {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    letter-spacing: 0.04em;
+    margin-top: auto;
+    transition: color var(--transition-fast);
+  }
+  .premium-card:hover .premium-card-link { color: var(--color-accent-light); }
+  .empty-state {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-lg);
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+  }
+  .empty-state a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  @media (max-width: 1024px) {
+    .collection-hero { min-height: 340px; }
+  }
+  @media (max-width: 768px) {
+    .collection-hero { min-height: 300px; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .premium-card-img-wrap { aspect-ratio: 4 / 3; }
+  }
+</style>

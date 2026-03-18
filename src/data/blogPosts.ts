@@ -26,7 +26,7 @@ export const blogPosts: BlogPost[] = [
       'Everything you need to know about planning the perfect castle wedding. From choosing the right venue and budgeting to guest logistics and seasonal considerations, this comprehensive guide covers every detail.',
     date: '2026-03-12',
     category: 'Wedding',
-    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     readTime: '12 min read',
   },
   {
@@ -46,7 +46,7 @@ export const blogPosts: BlogPost[] = [
       'Bring your four-legged friend along for a royal adventure. Our guide to the best pet-friendly castles in the UK covers everything from dog-friendly grounds to castles with dedicated pet amenities.',
     date: '2026-03-05',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     readTime: '6 min read',
   },
   {
@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
       'Escape the everyday with a romantic castle break. From candlelit dinners in medieval halls to four-poster beds with countryside views, discover the most romantic castle stays across England.',
     date: '2026-02-25',
     category: 'Regional',
-    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1526816229784-65d5d54ac8bc?w=800&q=80',
     readTime: '7 min read',
   },
   {
@@ -126,7 +126,7 @@ export const blogPosts: BlogPost[] = [
       'Scotland\'s castles offer some of the most breathtaking wedding venues in the world. From intimate tower houses to grand baronial estates, explore our pick of the best Scottish castle wedding venues.',
     date: '2026-01-28',
     category: 'Wedding',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1553434320-e9f5757140b1?w=800&q=80',
     readTime: '10 min read',
   },
   {
@@ -176,7 +176,7 @@ export const blogPosts: BlogPost[] = [
       'Planning a getaway for a big group? Castles are perfect for large parties with their sprawling grounds and multiple bedrooms. Here are our top picks for castle rentals that comfortably sleep 20 or more.',
     date: '2026-01-06',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     readTime: '7 min read',
   },
   {
@@ -186,7 +186,7 @@ export const blogPosts: BlogPost[] = [
       'Make the most of a summer castle stay with our guide to outdoor activities. From archery and falconry to wild swimming and highland walks, these castles offer adventures beyond the four walls.',
     date: '2026-01-02',
     category: 'Seasonal',
-    image: 'https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80',
     readTime: '8 min read',
   },
 ];

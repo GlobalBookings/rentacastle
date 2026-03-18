@@ -1,0 +1,290 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Best Time to Rent a Castle in the UK';
+const description = 'When is the best time to rent a castle in the UK? Seasonal guide covering weather, prices, and booking tips for castle holidays throughout the year.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: title },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=1200&q=80"
+      alt="Castle through the seasons in the British countryside"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Seasonal Guide</span>
+      <h1>{title}</h1>
+      <p>Find the perfect season for your castle stay — from summer sunshine to cosy winter firesides.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        The UK's castles are spectacular in every season, but the time of year you visit can significantly affect your experience, budget, and availability. Whether you want long summer evenings on castle battlements or Christmas by a roaring log fire, this guide helps you pick the perfect time for your castle holiday.
+      </p>
+
+      <!-- Spring -->
+      <section class="guide-section">
+        <div class="guide-season-icon">🌸</div>
+        <h2>Spring (March–May)</h2>
+        <p>
+          Spring is a wonderful time for a castle stay. Castle gardens come alive with daffodils, bluebells, and flowering cherry trees, and the surrounding countryside is lush and green. Temperatures are mild — typically 8–16°C — though you'll still want layers for cool mornings and evenings.
+        </p>
+        <p>
+          <strong>Why choose spring:</strong> It's one of the quieter seasons, meaning better availability and lower prices than summer. Easter can be busy, but either side of the bank holidays you'll find excellent deals. Spring is perfect for couples looking for a romantic escape or photographers wanting to capture castle gardens at their best.
+        </p>
+        <p>
+          <strong>What to expect:</strong> Longer daylight hours as the clocks change, occasional rain showers (this is Britain, after all), and the chance to enjoy castle grounds without summer crowds. Many castles open their gardens to visitors in spring, so you may see local events and open-garden days nearby.
+        </p>
+      </section>
+
+      <!-- Summer -->
+      <section class="guide-section">
+        <div class="guide-season-icon">☀️</div>
+        <h2>Summer (June–August)</h2>
+        <p>
+          Summer is peak season for castle rentals, and with good reason. The UK enjoys its longest days — up to 17 hours of daylight in Scotland — warmest temperatures (15–25°C), and the most reliable weather. It's the ideal time for outdoor activities, exploring castle grounds, and dining al fresco.
+        </p>
+        <p>
+          <strong>Why choose summer:</strong> The best weather, longest evenings, and the widest choice of activities. Castle grounds are at their most beautiful, and you can make the most of gardens, terraces, and outdoor spaces. It's perfect for <a href="/guides/group-booking-guide">group celebrations</a>, family holidays, and <a href="/guides/castle-wedding-guide">weddings</a>.
+        </p>
+        <p>
+          <strong>What to know:</strong> Book early — the most popular castles sell out 6–12 months ahead for summer dates. Prices are at their highest, particularly in July and August and during school holidays. If you want a summer castle but with better prices, aim for early June or the first week of September.
+        </p>
+      </section>
+
+      <!-- Autumn -->
+      <section class="guide-section">
+        <div class="guide-season-icon">🍂</div>
+        <h2>Autumn (September–November)</h2>
+        <p>
+          Autumn transforms the UK's castle landscapes with dramatic colours — rich golds, burnt oranges, and deep reds. It's an incredibly atmospheric time to stay in a castle, with misty mornings, harvest festivals, and the first fires of the season being lit.
+        </p>
+        <p>
+          <strong>Why choose autumn:</strong> Excellent value for money. Prices drop after the summer rush, and availability improves significantly. The countryside looks stunning, and there are fewer tourists at nearby attractions. October half-term can be a wonderful time for families, with many castles offering Halloween-themed activities.
+        </p>
+        <p>
+          <strong>What to expect:</strong> Temperatures range from 5–15°C, with shorter days and the possibility of rain. Pack warm layers and waterproofs. The atmosphere is incredibly romantic — imagine watching the sunset from a castle turret as autumn leaves swirl below. Visit our <a href="/guides/packing-list">packing list</a> for autumn essentials.
+        </p>
+      </section>
+
+      <!-- Winter -->
+      <section class="guide-section">
+        <div class="guide-season-icon">❄️</div>
+        <h2>Winter (December–February)</h2>
+        <p>
+          Winter castle stays are pure magic. Picture log fires crackling in grand fireplaces, candlelit dinners in medieval halls, and frost-covered castle grounds glistening in the morning light. There is simply nothing more enchanting than Christmas in a castle.
+        </p>
+        <p>
+          <strong>Why choose winter:</strong> Outside of the Christmas and New Year period, winter offers the lowest prices of the year. January and February are the best months for bargain castle stays. The experience is incredibly cosy and intimate — perfect for romantic getaways or small group retreats.
+        </p>
+        <p>
+          <strong>What to know:</strong> Christmas and New Year weeks are extremely popular and priced accordingly — book at least 9–12 months ahead. Castles can be cold in winter, so check what heating is provided and read our <a href="/guides/castle-etiquette">castle etiquette guide</a> for tips on staying warm. Many castles decorate beautifully for the festive season, adding to the magic.
+        </p>
+      </section>
+
+      <!-- Booking Tips -->
+      <section class="guide-section">
+        <div class="guide-season-icon">📅</div>
+        <h2>Booking Tips</h2>
+        <ul class="guide-list">
+          <li><strong>Book 6–12 months ahead</strong> for summer dates and Christmas/New Year stays</li>
+          <li><strong>Book 2–3 months ahead</strong> for shoulder season stays (spring and autumn)</li>
+          <li><strong>Look for last-minute deals</strong> in January, February, and November — cancellations create opportunities</li>
+          <li><strong>Midweek stays</strong> are almost always cheaper than weekends; consider a Monday–Thursday break</li>
+          <li><strong>Consider off-peak school holidays</strong> — February half-term is much quieter than summer</li>
+          <li><strong>Sign up for castle newsletters</strong> — many offer early-bird discounts and returning-guest rates</li>
+        </ul>
+        <p>
+          For more detailed advice on the booking process, read our complete <a href="/guides/how-to-rent-a-castle">how to rent a castle guide</a>.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Ready to Book Your Castle Stay?</h3>
+        <p>Browse our collection and find availability for your preferred dates.</p>
+        <a href="/castles" class="btn btn-accent">Browse All Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-season-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,224 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { castles } from '../../data/castles';
+import { blogPosts } from '../../data/blogPosts';
+
+const subRegion = {
+  slug: 'yorkshire',
+  name: 'Yorkshire',
+  parentRegion: 'England',
+  parentSlug: 'england',
+  counties: ['Yorkshire', 'West Yorkshire', 'North Yorkshire', 'South Yorkshire', 'East Riding of Yorkshire'],
+  description: 'Rent a castle in God\'s Own Country. Yorkshire offers everything from grand medieval castles in the Dales to fortified manor houses on the wild North York Moors, with rich history and stunning landscapes at every turn.',
+  image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+};
+
+const regionCastles = castles.filter(c => {
+  const countyMatch = subRegion.counties.some(county =>
+    c.county.toLowerCase().includes(county.toLowerCase()) ||
+    county.toLowerCase().includes(c.county.toLowerCase())
+  );
+  const nameMatch = (c.description + ' ' + (c.overview || '')).toLowerCase().includes(subRegion.name.toLowerCase());
+  return countyMatch || nameMatch;
+});
+
+const relatedPosts = blogPosts.slice(0, 4);
+---
+
+<BaseLayout title={`${subRegion.name} Castle Rentals - Castles to Rent in ${subRegion.name} | RentACastle`} description={`Browse castle rentals in ${subRegion.name}. ${regionCastles.length} stunning castles available to rent, from tower houses to grand estates. ${subRegion.description}`}>
+  <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Regions', href: '/regions' },
+      { label: subRegion.parentRegion, href: `/regions/${subRegion.parentSlug}` },
+      { label: subRegion.name },
+    ]} />
+  </div>
+  <section class="page-hero">
+    <img src={subRegion.image} alt={`Castles in ${subRegion.name}`} class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">{regionCastles.length} {regionCastles.length === 1 ? 'Castle' : 'Castles'}</span>
+      <h1>Castles in {subRegion.name}</h1>
+      <p>{subRegion.description}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Castle Rentals in {subRegion.name}</h2>
+        <p>Browse {regionCastles.length} extraordinary {regionCastles.length === 1 ? 'castle' : 'castles'} available to rent in {subRegion.name}.</p>
+      </div>
+      {regionCastles.length > 0 ? (
+        <div class="grid grid-3">
+          {regionCastles.map(castle => (
+            <a href={`/castles/${castle.slug}`} class="castle-card card">
+              <div class="castle-card-img-wrap">
+                <img src={castle.image} alt={castle.name} class="card-image" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <h3>{castle.name}</h3>
+                <p class="castle-meta">{castle.type} · {castle.priceRange}</p>
+                <p class="castle-sleeps">Sleeps {castle.sleeps}</p>
+                <p class="castle-desc">{castle.shortDescription || castle.description.slice(0, 140)}...</p>
+                <div class="castle-card-footer">
+                  <span class="castle-price">{castle.avgPrice}</span>
+                  <span class="castle-link">View Castle →</span>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>We're currently sourcing castle rentals in {subRegion.name}. Browse all castles in {subRegion.parentRegion} instead.</p>
+          <a href={`/regions/${subRegion.parentSlug}`} class="btn btn-primary">View {subRegion.parentRegion} Castles →</a>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Related blog posts -->
+  {relatedPosts.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2>Castle Guides & Tips</h2>
+          <p>Plan your perfect {subRegion.name} castle stay with our insider guides.</p>
+        </div>
+        <div class="grid grid-4">
+          {relatedPosts.map(post => (
+            <a href={`/blog/${post.slug}`} class="card" style="display: block;">
+              <img src={post.image} alt={post.title} class="card-image" style="height: 160px;" loading="lazy" />
+              <div class="card-body">
+                <span class="tag">{post.category}</span>
+                <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">{post.title}</h3>
+                <span style="display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Explore More Castles</h2>
+        <p>Browse our full collection of castle rentals across {subRegion.parentRegion} and the entire United Kingdom.</p>
+        <div class="cta-buttons">
+          <a href={`/regions/${subRegion.parentSlug}`} class="btn btn-secondary">All {subRegion.parentRegion} Castles →</a>
+          <a href="/castles" class="btn btn-primary">Browse All Castles →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .castle-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .castle-card-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .castle-card-img-wrap .card-image {
+    height: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  .castle-card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  .castle-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .castle-meta {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .castle-sleeps {
+    font-size: 0.82rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .castle-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .castle-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .castle-price {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+  }
+
+  .castle-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .cta-box {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-box h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-box p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+
+  .empty-state p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,419 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Frequently Asked Questions';
+const description = 'Answers to common questions about renting a castle in the UK. Costs, booking, weddings, pets, Wi-Fi, heating, and everything else you need to know.';
+
+const breadcrumbItems = [
+  { label: 'FAQ' },
+];
+
+const faqs = [
+  {
+    question: 'How much does it cost to rent a castle?',
+    answer: 'Prices range from £100 to £5,000+ per night depending on size, location, and season. Budget castle stays start from around £100–200 per night for smaller properties or individual rooms, while exclusive-use of a grand castle for 20+ guests can cost £2,000–5,000 per night. When split between a group, even the grandest castles can be surprisingly affordable per person. Read our <a href="/guides/how-to-rent-a-castle">complete guide to renting a castle</a> for detailed budget advice.',
+  },
+  {
+    question: 'Can I get married in a castle?',
+    answer: 'Yes! Many castles hold wedding licences and are experienced at hosting ceremonies and receptions. Browse our <a href="/castles">castle collection</a> to find licensed venues. You\'ll need to check that your chosen castle has the appropriate licence and discuss ceremony arrangements directly. Read our <a href="/guides/castle-wedding-guide">castle wedding guide</a> for everything you need to know about planning your big day.',
+  },
+  {
+    question: 'Are castles suitable for families with children?',
+    answer: 'Many castles welcome families, though some have steep staircases, uneven floors, and features that may not be suitable for very young children. Check individual listings for child-friendliness ratings and specific facilities like cots, highchairs, and fenced gardens. Castles with grounds are particularly good for families — children love exploring towers, secret gardens, and woodland walks.',
+  },
+  {
+    question: 'Can I bring my dog to a castle?',
+    answer: 'Some castles welcome well-behaved dogs, while others have a strict no-pets policy due to antique furnishings or resident animals. Look for pet-friendly indicators on our castle listings. Always confirm pet policies directly with the castle owner before booking, and ask about any specific rules — many castles ask that dogs stay off furniture and out of certain rooms.',
+  },
+  {
+    question: 'What is exclusive-use?',
+    answer: 'Exclusive-use means you hire the entire castle for your group. No other guests will be staying during your visit, giving you complete privacy and the run of the whole property — from the grand hall to the gardens. This is ideal for <a href="/guides/castle-wedding-guide">weddings</a>, celebrations, and <a href="/guides/group-booking-guide">group getaways</a>. You\'ll have access to all communal rooms, grounds, and facilities for the duration of your stay.',
+  },
+  {
+    question: 'How far in advance should I book?',
+    answer: 'For peak periods — summer (June–August), Christmas, New Year, and bank holidays — book 6–12 months ahead to secure the best castles. For off-peak periods (January–March, November), 2–3 months is usually sufficient. Last-minute deals can sometimes be found when other guests cancel, particularly in shoulder seasons. Read our <a href="/guides/best-time-to-visit">best time to visit guide</a> for detailed seasonal advice.',
+  },
+  {
+    question: 'Is Wi-Fi available in castles?',
+    answer: 'Most castles now offer Wi-Fi, though connection speeds vary considerably due to thick stone walls, rural locations, and the sheer size of the buildings. Don\'t expect city-speed broadband — many castles have functional Wi-Fi for emails and light browsing, but streaming and video calls may be unreliable. We note Wi-Fi availability on each listing. Consider embracing the digital detox and bringing <a href="/guides/packing-list">analogue entertainment</a> instead.',
+  },
+  {
+    question: 'What about heating?',
+    answer: 'Castles can be draughty — those thick stone walls are centuries old, after all. Most have central heating supplemented by log fires in the main rooms. Some older or more remote castles rely primarily on fires and wood-burning stoves. Pack warm layers, thick socks, and a hot water bottle, especially for winter stays. Our <a href="/guides/castle-etiquette">castle etiquette guide</a> has more tips on staying comfortable.',
+  },
+  {
+    question: 'Can I host an event at a castle?',
+    answer: 'Many castles accommodate events including birthday parties, corporate retreats, anniversary celebrations, and festive gatherings. Capacities range from intimate dinners for 10 to grand celebrations for 100+ guests. Check individual listings for event suitability, or contact the castle directly to discuss your requirements. Our <a href="/guides/group-booking-guide">group booking guide</a> covers everything from hen parties to corporate away days.',
+  },
+  {
+    question: 'How do I book?',
+    answer: 'Click "View Details" on any castle in our <a href="/castles">directory</a>, then use the booking link to check availability on the host platform (Airbnb, Sykes Cottages, Historic UK, etc.) or contact the castle directly. Most castles require a deposit to secure your booking, with the balance due a few weeks before your stay. Read our <a href="/guides/how-to-rent-a-castle">how to rent a castle guide</a> for a complete walkthrough of the booking process.',
+  },
+];
+
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map((faq) => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.answer.replace(/<[^>]*>/g, ''),
+    },
+  })),
+});
+---
+
+<BaseLayout title={title} description={description}>
+  <script type="application/ld+json" set:html={faqSchema} />
+
+  <!-- Hero Section -->
+  <section class="faq-hero">
+    <img
+      src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&q=80"
+      alt="Castle entrance with questions answered"
+      class="faq-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="faq-hero-overlay"></div>
+    <div class="faq-hero-content">
+      <span class="faq-badge">Help &amp; Advice</span>
+      <h1>{title}</h1>
+      <p>Everything you need to know about renting a castle in the UK, answered.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <section class="faq-section">
+      <p class="faq-intro">
+        Got questions about castle stays? You're not alone. Here are the answers to the questions we hear most often. If you can't find what you're looking for, check our <a href="/guides/how-to-rent-a-castle">complete guides</a> or <a href="/partners">get in touch</a>.
+      </p>
+
+      <div class="faq-list">
+        {faqs.map((faq) => (
+          <details class="faq-item">
+            <summary class="faq-question">{faq.question}</summary>
+            <div class="faq-answer">
+              <p set:html={faq.answer} />
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <!-- Guides CTA -->
+    <section class="faq-guides">
+      <h2>Explore Our Guides</h2>
+      <p>For more detailed advice, browse our in-depth castle guides:</p>
+      <div class="faq-guides-grid">
+        <a href="/guides/how-to-rent-a-castle" class="faq-guide-card">
+          <span class="faq-guide-icon">🏰</span>
+          <h3>How to Rent a Castle</h3>
+          <p>Step-by-step guide to finding, booking, and enjoying your castle stay.</p>
+        </a>
+        <a href="/guides/castle-wedding-guide" class="faq-guide-card">
+          <span class="faq-guide-icon">💒</span>
+          <h3>Castle Weddings</h3>
+          <p>Plan your fairytale wedding — budgets, legal requirements, and timelines.</p>
+        </a>
+        <a href="/guides/best-time-to-visit" class="faq-guide-card">
+          <span class="faq-guide-icon">📅</span>
+          <h3>Best Time to Visit</h3>
+          <p>Seasonal guide to prices, weather, and the perfect time for your trip.</p>
+        </a>
+        <a href="/guides/group-booking-guide" class="faq-guide-card">
+          <span class="faq-guide-icon">👥</span>
+          <h3>Group Bookings</h3>
+          <p>Tips for hen parties, birthdays, retreats, and family reunions.</p>
+        </a>
+        <a href="/guides/packing-list" class="faq-guide-card">
+          <span class="faq-guide-icon">🧳</span>
+          <h3>Packing List</h3>
+          <p>Essential items to bring for a comfortable, fun castle stay.</p>
+        </a>
+        <a href="/guides/castle-etiquette" class="faq-guide-card">
+          <span class="faq-guide-icon">🤝</span>
+          <h3>Castle Etiquette</h3>
+          <p>How to be the perfect castle guest — what to expect and how to behave.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="faq-cta">
+      <h3>Still Have Questions?</h3>
+      <p>Browse our castle collection or get in touch — we're happy to help.</p>
+      <div class="faq-cta-buttons">
+        <a href="/castles" class="btn btn-accent">Browse Castles</a>
+        <a href="/partners" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .faq-hero {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+  }
+
+  .faq-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .faq-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.88) 0%, rgba(26, 20, 35, 0.78) 50%, rgba(45, 35, 64, 0.72) 100%);
+  }
+
+  .faq-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .faq-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .faq-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+
+  .faq-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .faq-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .faq-intro {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .faq-intro a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    transition: box-shadow 0.2s ease;
+  }
+
+  .faq-item[open] {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .faq-question {
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-heading);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-question::after {
+    content: '+';
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--color-accent);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+    font-family: var(--font-body);
+  }
+
+  .faq-item[open] .faq-question::after {
+    content: '−';
+  }
+
+  .faq-answer {
+    padding: 0 1.5rem 1.25rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9375rem;
+    color: #4b5563;
+    line-height: 1.8;
+  }
+
+  .faq-answer a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .faq-answer a:hover {
+    color: var(--color-accent-light);
+  }
+
+  /* Guides Section */
+  .faq-guides {
+    padding: 3rem 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .faq-guides h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-guides > p {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+  }
+
+  .faq-guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .faq-guide-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--color-bg-alt);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid transparent;
+  }
+
+  .faq-guide-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
+  }
+
+  .faq-guide-icon {
+    font-size: 1.75rem;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-guide-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .faq-guide-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+
+  /* CTA */
+  .faq-cta {
+    margin: 2rem 0 4rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .faq-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .faq-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .faq-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .faq-hero {
+      height: 280px;
+    }
+
+    .faq-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .faq-guides-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .faq-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

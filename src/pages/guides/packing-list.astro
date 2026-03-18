@@ -1,0 +1,288 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Castle Stay Packing List';
+const description = 'Essential packing list for a castle stay in the UK. What to bring for comfort, warmth, and fun in a historic British castle.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: title },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=1200&q=80"
+      alt="Packed suitcase ready for a castle holiday"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Practical Guide</span>
+      <h1>{title}</h1>
+      <p>Don't get caught unprepared — here's everything you need to pack for a comfortable castle stay.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        Staying in a castle is a unique experience, and packing for one is a little different from packing for a standard hotel or holiday cottage. Historic stone walls, long corridors, and rural locations mean you'll want to think carefully about comfort, warmth, and entertainment. Use this checklist to make sure you're fully prepared for your castle adventure.
+      </p>
+
+      <!-- Clothing Essentials -->
+      <section class="guide-section">
+        <h2>👕 Clothing Essentials</h2>
+        <p>
+          The golden rule for castle stays is <strong>layers</strong>. Even in summer, castle interiors can be cool thanks to thick stone walls that have been keeping out the elements for centuries. Pack a mix of warm and light layers so you can adjust throughout the day.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Warm base layers</strong> — thermal tops and leggings for chilly evenings, especially in winter</li>
+          <li><strong>Waterproof jacket</strong> — British weather is unpredictable, and castle grounds beg to be explored</li>
+          <li><strong>Walking boots or sturdy shoes</strong> — essential for exploring gardens, woodlands, and nearby countryside</li>
+          <li><strong>Smart casual outfit</strong> — some castles offer formal dining or you might want to dress up for a special dinner</li>
+          <li><strong>Warm socks and slippers</strong> — stone floors can be cold underfoot, particularly first thing in the morning</li>
+          <li><strong>A cosy jumper or fleece</strong> — perfect for curling up by the fire with a book</li>
+        </ul>
+      </section>
+
+      <!-- Toiletries & Comfort -->
+      <section class="guide-section">
+        <h2>🧴 Toiletries &amp; Comfort</h2>
+        <p>
+          While many castles provide basic toiletries, it's wise to bring your own essentials. Castles can be draughty, so comfort items make all the difference.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Your usual toiletries</strong> — shampoo, conditioner, toothbrush, and any prescription medications</li>
+          <li><strong>Hand cream and lip balm</strong> — the combination of stone buildings and open fires can dry out your skin</li>
+          <li><strong>Hot water bottle</strong> — an absolute lifesaver for winter stays, especially in older castles without modern heating throughout</li>
+          <li><strong>Extra blanket or throw</strong> — some castles provide plenty, but it never hurts to bring a favourite cosy blanket</li>
+          <li><strong>Eye mask and earplugs</strong> — old buildings can creak and groan, and rural darkness is something else entirely</li>
+        </ul>
+      </section>
+
+      <!-- Entertainment -->
+      <section class="guide-section">
+        <h2>🎲 Entertainment</h2>
+        <p>
+          Many castles are in remote locations where Wi-Fi can be patchy at best. Thick stone walls are brilliant for keeping out invaders but terrible for broadband signals. Embrace the digital detox and bring some analogue entertainment.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Board games and card games</strong> — nothing beats a game of Cluedo in an actual castle</li>
+          <li><strong>Books</strong> — bring a good novel or two; castle libraries are atmospheric reading spots</li>
+          <li><strong>A deck of cards</strong> — compact and endlessly versatile for group entertainment</li>
+          <li><strong>Puzzles</strong> — a jigsaw puzzle spread across a castle dining table is a wonderful rainy-day activity</li>
+          <li><strong>Music speaker</strong> — a small Bluetooth speaker can set the mood for dinner or a quiet evening</li>
+        </ul>
+        <p>
+          Check your <a href="/castles">castle listing</a> for details on Wi-Fi and entertainment facilities before you go.
+        </p>
+      </section>
+
+      <!-- For the Kitchen -->
+      <section class="guide-section">
+        <h2>🍳 For the Kitchen (Self-Catering)</h2>
+        <p>
+          If you're staying in a <strong>self-catering castle</strong>, the kitchen will usually be well-equipped, but a few basics might not be provided. Stock up before you arrive, as the nearest shop may be a 20-minute drive.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Tea, coffee, and milk</strong> — essentials for that first-morning cuppa</li>
+          <li><strong>Cooking oil, salt, pepper, and basic spices</strong> — often missing from castle kitchens</li>
+          <li><strong>Cling film, foil, and kitchen roll</strong> — not always supplied</li>
+          <li><strong>Your favourite treats</strong> — local delis and farm shops are wonderful, but bring snacks for the journey</li>
+          <li><strong>A good bottle of wine</strong> — or whisky, if you're in Scotland</li>
+        </ul>
+      </section>
+
+      <!-- Don't Forget -->
+      <section class="guide-section">
+        <h2>🔦 Don't Forget</h2>
+        <p>
+          These are the items people most often wish they'd packed. Castle corridors can be dark, and rural locations mean you'll need to be self-sufficient.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Torch or headlamp</strong> — castle corridors can be dimly lit, and some don't have outdoor lighting; this is essential for midnight trips to the kitchen</li>
+          <li><strong>Phone charger and power bank</strong> — plug sockets may not be near your bed in a 500-year-old room</li>
+          <li><strong>Camera</strong> — you'll want to capture every turret, spiral staircase, and misty morning view</li>
+          <li><strong>Cash</strong> — some rural areas and nearby pubs may not accept cards</li>
+          <li><strong>Travel adapter</strong> — if you're visiting from overseas, UK plugs are three-pronged</li>
+          <li><strong>Binoculars</strong> — many castles have incredible views and local wildlife to spot</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Packed and Ready?</h3>
+        <p>Find your perfect castle stay and start planning your unforgettable trip.</p>
+        <a href="/castles" class="btn btn-accent">Browse All Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

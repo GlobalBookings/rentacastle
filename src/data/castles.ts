@@ -193,7 +193,7 @@ Whether you're celebrating a milestone anniversary, planning an intimate wedding
     images: [
       'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -445,7 +445,7 @@ The castle's location in Fife is ideal for golfers — with St Andrews and its l
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: '#',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A 5-star Scottish baronial castle hotel on the Ayrshire coast with 36 acres of gardens, views to Ailsa Craig, and Michelin-worthy dining.',
     highlights: [
       '5-star luxury castle hotel',
@@ -507,7 +507,7 @@ Beyond the castle walls, Glenapp offers a wealth of experiences that take full a
     lat: 55.1000,
     lng: -5.0333,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
       'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     ],
@@ -666,7 +666,7 @@ Tulloch Castle's location is one of its greatest assets. Dingwall sits at the st
     images: [
       'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
       'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -839,7 +839,7 @@ The castle's location in the Brecon Beacons is a major draw. The national park o
     bedrooms: 8,
     bathrooms: 6,
     bookingUrl: '#',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'One of the few inhabited medieval castles in Wales, offering exclusive-use accommodation with stunning gardens and heritage coast nearby.',
     highlights: [
       'Inhabited medieval castle (since 1200s)',
@@ -900,7 +900,7 @@ Fonmon's gardens are a highlight in themselves. The walled garden, herbaceous bo
     lat: 51.3983,
     lng: -3.4350,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     ],
@@ -1138,7 +1138,7 @@ The palace's setting in Perthshire — often called the "gateway to the Highland
     lng: -3.4017,
     images: [
       'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -1297,7 +1297,7 @@ The castle's leisure facilities include an indoor swimming pool, sauna, and spa 
     lng: -3.3117,
     images: [
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -1453,7 +1453,7 @@ The wider Northumberland coast is an Area of Outstanding Natural Beauty, and fro
     images: [
       'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
       'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1469,7 +1469,7 @@ The wider Northumberland coast is an Area of Outstanding Natural Beauty, and fro
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: '#',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Stay in the lovingly converted Granary Lodge on the grounds of the Castle of Mey, the late Queen Mother\'s beloved Highland retreat.',
     highlights: [
       'On the grounds of the Queen Mother\'s castle',
@@ -1528,7 +1528,7 @@ Staying at the Castle of Mey places you on the famous North Coast 500 driving ro
     lat: 58.6433,
     lng: -3.2217,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
       'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
     ],
@@ -1785,7 +1785,7 @@ Dining at Castle Leslie celebrates the finest Irish produce, with the Snaffles R
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: '#',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A luxury country house hotel set in 275 acres of Dartmoor National Park, offering championship golf, spa, and family-friendly activities.',
     highlights: [
       'Set in 275 acres of Dartmoor',
@@ -1847,7 +1847,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     lat: 50.6583,
     lng: -3.7417,
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     ],
@@ -2028,7 +2028,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -2063,7 +2063,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'independentcottages.co.uk',
     images: [
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     ],
   },
@@ -2079,7 +2079,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 6,
     bathrooms: 3,
     bookingUrl: 'https://www.holidaycottages.co.uk/cottage/oc-32752-dyfi-castle',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Magnificent castle with luxurious interiors, a hot tub and 40 acres of private land. Unparalleled views of the Dyfi Estuary and the sea.',
     highlights: [
       'Luxurious castle interiors',
@@ -2098,7 +2098,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'holidaycottages.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
@@ -2386,7 +2386,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -2421,7 +2421,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'oliverstravels.com',
     images: [
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     ],
   },
@@ -2437,7 +2437,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 4,
     bathrooms: 2,
     bookingUrl: 'https://www.oliverstravels.com/britain-ireland/scotland/perthshire/esk-castle-tower-and-apartment/',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Carefully maintained castle set in 1300 acres of rolling parkland, with 2 apartments, ideal for both couples and larger groups.',
     highlights: [
       '1300 acres of rolling parkland',
@@ -2455,7 +2455,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'oliverstravels.com',
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
@@ -2741,7 +2741,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -2775,7 +2775,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'oliverstravels.com',
     images: [
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     ],
   },
@@ -2791,7 +2791,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 5,
     bathrooms: 2,
     bookingUrl: 'https://carrhallcastle.com/',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'The Yorkshire Castle is a perfect holiday home destination. A luxurious yet cosy sanctuary for those looking to relax in historic Yorkshire surroundings.',
     highlights: [
       'Luxurious Yorkshire castle',
@@ -2809,7 +2809,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'carrhallcastle.com',
     images: [
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],

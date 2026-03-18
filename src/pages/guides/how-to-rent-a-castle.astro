@@ -1,0 +1,296 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'How to Rent a Castle in the UK';
+const description = 'Complete guide to renting a castle in the UK. Learn how to choose, book, and prepare for your castle stay, from budget planning to packing essentials.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: title },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=80"
+      alt="Stunning castle in the UK countryside"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Complete Guide</span>
+      <h1>{title}</h1>
+      <p>Everything you need to know about finding, booking, and enjoying a castle stay in Britain.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        Renting a castle in the United Kingdom is one of the most memorable holiday experiences you can have. Whether you're celebrating a milestone birthday, planning a romantic escape, or simply want to live like royalty for a weekend, there's a castle to suit every occasion and budget. This step-by-step guide walks you through the entire process.
+      </p>
+
+      <!-- Step 1 -->
+      <section class="guide-section">
+        <div class="guide-step-number">Step 1</div>
+        <h2>Choose Your Castle Type</h2>
+        <p>
+          Not all castle rentals are the same. Understanding the different types will help you pick the right one for your trip. <strong>Exclusive-use</strong> castles give you the entire property to yourself — perfect for weddings, group celebrations, or anyone who wants complete privacy. You'll typically have access to all rooms, grounds, and facilities.
+        </p>
+        <p>
+          <strong>Room rentals</strong> work like a boutique hotel: you book individual rooms within a castle that may have other guests. This is ideal for couples or small groups who want the castle experience at a lower price. <strong>Self-catering</strong> castles provide a fully equipped kitchen so you can cook your own meals, while <strong>serviced</strong> castles include catering, housekeeping, and sometimes even a dedicated host or chef.
+        </p>
+        <p>
+          Consider what matters most to you — privacy, convenience, or budget — and choose accordingly. Browse our <a href="/castles">full castle collection</a> to see what's available.
+        </p>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="guide-section">
+        <div class="guide-step-number">Step 2</div>
+        <h2>Pick Your Region</h2>
+        <p>
+          The UK offers castle stays in dramatically different landscapes, each with its own character and charm.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Scotland</strong> — Dramatic Highlands, lochs, and some of the UK's most iconic castle silhouettes. Ideal for wild, romantic getaways. <a href="/regions/scotland">Explore Scottish castles</a>.</li>
+          <li><strong>England</strong> — From the rolling Cotswolds to the rugged Northumberland coast, English castles range from medieval fortresses to elegant stately homes. <a href="/regions/england">Browse English castles</a>.</li>
+          <li><strong>Wales</strong> — Castles nestled in green valleys and along dramatic coastlines. Wales has more castles per square mile than any other country in Europe. <a href="/regions/wales">Discover Welsh castles</a>.</li>
+          <li><strong>Northern Ireland</strong> — Stunning coastal castles and estates with rich history and warm hospitality. <a href="/regions/northern-ireland">View Northern Irish castles</a>.</li>
+        </ul>
+        <p>
+          Visit our <a href="/regions">regions page</a> for a full breakdown of what each area offers.
+        </p>
+      </section>
+
+      <!-- Step 3 -->
+      <section class="guide-section">
+        <div class="guide-step-number">Step 3</div>
+        <h2>Set Your Budget</h2>
+        <p>
+          Castle stays range widely in price. At the affordable end, you can find individual rooms in castle B&Bs or small self-catering tower houses from around <strong>£100–£200 per night</strong>. Mid-range options — perhaps a wing of a castle or a smaller exclusive-use property — typically run from <strong>£200–£500 per night</strong>.
+        </p>
+        <p>
+          For grand exclusive-use castles sleeping 20 or more guests, expect to pay <strong>£1,000–£5,000+ per night</strong>, though when split between a large group, this can work out surprisingly affordable per person. Several factors affect pricing: the size of the castle, its location, the season, whether catering is included, and the day of the week (weekends are usually more expensive).
+        </p>
+        <p>
+          Don't forget to budget for extras like food, travel, activities, and any deposits. Many castles require a security deposit of £200–£1,000, which is refunded after your stay.
+        </p>
+      </section>
+
+      <!-- Step 4 -->
+      <section class="guide-section">
+        <div class="guide-step-number">Step 4</div>
+        <h2>Check Availability</h2>
+        <p>
+          Castle rentals are in high demand, particularly during peak seasons. <strong>Summer (June–August)</strong> is the busiest period, with long daylight hours and the best weather. <strong>Christmas and New Year</strong> are equally popular — there's something magical about spending the festive season in a castle with roaring log fires and snow-dusted turrets.
+        </p>
+        <p>
+          <strong>Bank holiday weekends</strong> also fill up fast, so plan well ahead. For the best selection, book 6–12 months in advance for summer and Christmas dates. If you're flexible with timing, the shoulder seasons of spring and autumn offer excellent value and quieter stays. Read our <a href="/guides/best-time-to-visit">seasonal guide</a> for more tips on timing your visit.
+        </p>
+      </section>
+
+      <!-- Step 5 -->
+      <section class="guide-section">
+        <div class="guide-step-number">Step 5</div>
+        <h2>Book and Prepare</h2>
+        <p>
+          Once you've found your castle, booking is usually straightforward. Most castles are listed on platforms like Airbnb, Sykes Cottages, or their own websites. Click through from our listings to check live availability and book directly.
+        </p>
+        <p>
+          After booking, you'll typically receive a confirmation email with directions, check-in instructions, and house rules. Many castles ask for a <strong>deposit upfront</strong> (often 25–50% of the total), with the balance due a few weeks before your stay. Read the cancellation policy carefully before committing.
+        </p>
+        <p>
+          To prepare, check our <a href="/guides/packing-list">castle packing list</a> so you don't forget anything, and read up on <a href="/guides/castle-etiquette">castle etiquette</a> to make the most of your stay. If you're planning a special event, contact the castle directly to discuss any arrangements.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Ready to Find Your Castle?</h3>
+        <p>Browse our curated collection of castle rentals across England, Scotland, Wales and Northern Ireland.</p>
+        <a href="/castles" class="btn btn-accent">Browse All Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-step-number {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    background: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

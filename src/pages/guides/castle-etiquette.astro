@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Castle Etiquette: What to Know Before You Stay';
+const description = 'Castle etiquette guide for UK castle stays. What to expect, how to behave, and tips for making the most of your historic castle rental.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: 'Castle Etiquette' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1486272812091-a9bf3c6376c5?w=1200&q=80"
+      alt="Elegant castle interior with period furnishings"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Etiquette Guide</span>
+      <h1>{title}</h1>
+      <p>A friendly guide to being the perfect castle guest — from respecting history to tipping staff.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        Staying in a castle isn't quite like staying in a hotel or a holiday cottage. These are historic properties, often hundreds of years old, filled with antique furnishings and steeped in stories. Being a thoughtful guest ensures you'll have a wonderful experience — and be welcome back. Here's our friendly guide to castle etiquette.
+      </p>
+
+      <!-- Respect the History -->
+      <section class="guide-section">
+        <h2>🏰 Respect the History</h2>
+        <p>
+          Everything in a castle tells a story. The four-poster bed you're sleeping in might be 200 years old. The tapestry on the wall could be priceless. The suit of armour in the hallway has probably been standing guard since before your grandparents were born.
+        </p>
+        <p>
+          <strong>Be gentle with furnishings.</strong> Avoid moving antique furniture, and take extra care with delicate items like mirrors, paintings, and porcelain. If something looks old and valuable, it almost certainly is. Use coasters on wooden surfaces and keep food and drinks away from upholstered antiques.
+        </p>
+        <p>
+          <strong>Be careful with fires.</strong> Many castles have working fireplaces, and your host may light fires for you or show you how. Follow the instructions provided, use the fireguard, and never leave a fire unattended. Don't burn anything other than the provided wood — castle chimneys can be centuries old and have specific requirements.
+        </p>
+        <p>
+          If you accidentally damage anything, report it honestly to your host. Accidents happen, and most castle owners appreciate honesty far more than discovering damage after you've left.
+        </p>
+      </section>
+
+      <!-- Noise and Neighbours -->
+      <section class="guide-section">
+        <h2>🤫 Noise and Neighbours</h2>
+        <p>
+          Most castles are set in rural locations, and while the surrounding countryside might seem empty, there are often neighbours, estate workers, or other guests within earshot. Sound carries surprisingly well across open fields and through stone walls.
+        </p>
+        <p>
+          <strong>Respect quiet hours.</strong> Most castles ask guests to keep noise down after 11 pm, though specific rules vary. Music outdoors should always be kept at a reasonable level — there's no need for a festival-level sound system when you have birdsong and crackling fires.
+        </p>
+        <p>
+          If you're planning a celebration — a birthday, hen party, or <a href="/guides/group-booking-guide">group event</a> — discuss your plans with the castle owner beforehand. They'll appreciate the heads-up and can advise on what's appropriate. Some castles are better suited to lively gatherings than others.
+        </p>
+      </section>
+
+      <!-- Heating and Draughts -->
+      <section class="guide-section">
+        <h2>🌡️ Heating and Draughts</h2>
+        <p>
+          Let's be honest: castles can be draughty. Walls that are three feet thick are brilliant at keeping out invaders, but they're not always brilliant at keeping in heat. Stone floors, high ceilings, and ancient windows mean you'll want to dress warmly, especially in the cooler months.
+        </p>
+        <p>
+          Most castles have central heating, supplemented by log fires in the main rooms. Some older castles rely more heavily on fires and portable heaters. Don't be shy about asking your host to adjust the heating or provide extra blankets.
+        </p>
+        <p>
+          <strong>Top tip:</strong> Bring warm layers, thick socks, and a hot water bottle. You'll thank us when you're padding down a stone corridor to the kitchen at midnight. Check our <a href="/guides/packing-list">packing list</a> for all the winter essentials.
+        </p>
+      </section>
+
+      <!-- Staff and Service -->
+      <section class="guide-section">
+        <h2>👋 Staff and Service</h2>
+        <p>
+          Depending on the castle, you might interact with a range of people: the castle owner, a property manager, a housekeeper, a chef, or groundskeepers. The level of service varies from a brief welcome and key handover to a fully attended stay with staff throughout.
+        </p>
+        <p>
+          <strong>Tipping</strong> is appreciated but not always expected. For serviced castles with dedicated staff (chef, housekeeper, butler), a tip of £10–£20 per staff member per day is generous and appropriate. For self-catering stays with minimal staff contact, tipping isn't expected but a small thank-you gesture — a card, a gift, or a positive review — goes a long way.
+        </p>
+        <p>
+          Be friendly but respectful of staff boundaries. They're there to ensure you have a wonderful stay, not to be your best friends. If you have requests or concerns, communicate them politely and promptly. Most castle teams are incredibly accommodating when asked nicely.
+        </p>
+      </section>
+
+      <!-- Photography -->
+      <section class="guide-section">
+        <h2>📸 Photography</h2>
+        <p>
+          You'll want to photograph everything — and you absolutely should. Castle stays are incredibly photogenic, and most hosts are delighted for you to share your experience on social media. A few guidelines:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Personal photography</strong> is almost always fine. Snap away to your heart's content for your own memories and social media.</li>
+          <li><strong>Commercial photography</strong> — professional shoots, product photography, or content creation for brands — usually requires permission and may incur an additional fee. Always ask first.</li>
+          <li><strong>Drone photography</strong> needs explicit permission. Many castle estates restrict drones due to privacy, wildlife, and aviation regulations.</li>
+          <li><strong>Tag the castle</strong> on social media when you share your photos. Castle owners love seeing guests enjoy their properties, and it helps other people discover the venue.</li>
+          <li><strong>Respect other guests' privacy</strong> if you're in a shared castle environment. Not everyone wants to appear in someone else's Instagram story.</li>
+        </ul>
+      </section>
+
+      <!-- Leaving the Castle -->
+      <section class="guide-section">
+        <h2>🚪 Leaving the Castle</h2>
+        <p>
+          How you leave a castle matters. The housekeeping team will handle the deep cleaning, but a little consideration on your part makes their job easier and ensures your security deposit is returned promptly.
+        </p>
+        <ul class="guide-list">
+          <li><strong>Leave it as you found it</strong> — return furniture to its original position, clear any personal items, and do a quick tidy of shared spaces.</li>
+          <li><strong>Wash up</strong> — in self-catering properties, leave the kitchen clean with dishes washed and put away. Empty the fridge of perishables.</li>
+          <li><strong>Take your rubbish</strong> — some rural castles don't have regular refuse collection. Ask your host about bin arrangements.</li>
+          <li><strong>Report any issues</strong> — if you've noticed a dripping tap, a broken latch, or anything that needs attention, let your host know before you leave.</li>
+          <li><strong>Strip the beds</strong> — some castles ask you to strip bed linen; others prefer you to leave beds made. Follow the specific instructions provided.</li>
+          <li><strong>Lock up properly</strong> — castle locks can be quirky. Make sure you follow the locking-up procedure and return all keys.</li>
+        </ul>
+        <p>
+          Finally, leave a review. Whether on the booking platform or by email to your host, feedback helps castle owners improve their offering and helps future guests make informed decisions. If you enjoyed your stay, say so — it means more than you might think.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Ready to Be the Perfect Castle Guest?</h3>
+        <p>Browse our collection and find your ideal castle stay across the UK.</p>
+        <a href="/castles" class="btn btn-accent">Browse All Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const title = 'Castle Wedding Guide: Planning Your Fairytale Day';
+const description = 'Complete guide to planning a castle wedding in the UK. Budgets, legal requirements, timelines, and the best castle wedding venues in Britain.';
+
+const breadcrumbItems = [
+  { label: 'Guides', href: '/guides/how-to-rent-a-castle' },
+  { label: 'Castle Wedding Guide' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Hero Section -->
+  <section class="guide-hero">
+    <img
+      src="https://images.unsplash.com/photo-1585231474241-c8340c2b2c65?w=1200&q=80"
+      alt="Romantic castle wedding venue in the UK"
+      class="guide-hero-img"
+      width="1400"
+      height="600"
+    />
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">Wedding Guide</span>
+      <h1>{title}</h1>
+      <p>Everything you need to plan the castle wedding of your dreams, from budget to big day.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <Breadcrumbs items={breadcrumbItems} />
+
+    <article class="guide-article">
+      <p class="guide-lead">
+        A castle wedding is the ultimate fairytale. Imagine exchanging vows in a grand hall with centuries of history echoing around you, then celebrating with your loved ones in grounds that stretch to the horizon. Castle weddings in the UK are increasingly popular — and with good reason. This guide covers everything you need to know to plan yours.
+      </p>
+
+      <!-- Why Choose a Castle Wedding -->
+      <section class="guide-section">
+        <h2>Why Choose a Castle Wedding</h2>
+        <p>
+          A castle provides something no modern venue can replicate: genuine history, grandeur, and atmosphere. Your wedding photos will be framed by turrets, stone archways, and sweeping lawns. Guests arrive knowing they're in for something truly special.
+        </p>
+        <p>
+          Beyond the aesthetics, castles offer practical advantages. Many are set in extensive grounds, providing beautiful outdoor spaces for ceremonies, drinks receptions, and photos. The built-in drama of the setting means you often need less decoration — the castle itself does the heavy lifting. And with exclusive-use bookings, you and your guests have the entire property for the weekend, creating an intimate house-party atmosphere.
+        </p>
+        <p>
+          Castle weddings also create lasting memories. There's something unforgettable about dancing in a medieval banqueting hall, toasting champagne on battlements at sunset, or walking down a candlelit stone corridor as newlyweds.
+        </p>
+      </section>
+
+      <!-- Types of Castle Weddings -->
+      <section class="guide-section">
+        <h2>Types of Castle Weddings</h2>
+        <p>
+          Castle weddings come in several formats, depending on the venue and your preferences:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Exclusive-use</strong> — Hire the entire castle for your wedding weekend. Guests stay on-site, and you have complete privacy and flexibility. This is the most popular option for castle weddings.</li>
+          <li><strong>Licensed ceremony &amp; reception</strong> — Many castles hold civil ceremony licences, meaning you can have both your ceremony and reception in the same breathtaking venue.</li>
+          <li><strong>Reception only</strong> — If you prefer a church ceremony or civil service elsewhere, you can hire a castle solely for your reception and evening celebrations.</li>
+          <li><strong>Elopement packages</strong> — Some castles offer intimate packages for couples who want to elope in style, with just a handful of witnesses amid castle splendour.</li>
+        </ul>
+      </section>
+
+      <!-- Budgeting -->
+      <section class="guide-section">
+        <h2>Budgeting for a Castle Wedding</h2>
+        <p>
+          Castle wedding costs vary enormously depending on the size of the castle, location, season, and what's included. Here's a rough breakdown to help you plan:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Venue hire:</strong> £2,000–£15,000+ for the weekend (exclusive-use). Smaller castles and off-peak dates are at the lower end.</li>
+          <li><strong>Catering:</strong> £50–£150+ per head for a sit-down meal, or £30–£80 per head for buffet-style dining.</li>
+          <li><strong>Drinks:</strong> £20–£50 per head, depending on whether you provide an open bar or limited drinks package.</li>
+          <li><strong>Photography &amp; videography:</strong> £1,500–£4,000+ for professional coverage.</li>
+          <li><strong>Flowers &amp; decoration:</strong> £500–£3,000+, though castles often need minimal dressing.</li>
+          <li><strong>Entertainment:</strong> £500–£2,500 for a band, DJ, or other entertainment.</li>
+        </ul>
+        <p>
+          All in, expect a castle wedding to cost between <strong>£5,000 and £50,000+</strong>, with the average falling around £15,000–£25,000 for a mid-sized celebration. The per-guest cost can actually be competitive with hotel venues once you factor in the accommodation that's included with exclusive-use hire.
+        </p>
+      </section>
+
+      <!-- Choosing Your Castle -->
+      <section class="guide-section">
+        <h2>Choosing Your Castle</h2>
+        <p>
+          When selecting a castle for your wedding, consider these key factors:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Capacity</strong> — How many guests can the castle accommodate for both the ceremony and overnight stays? Many castles sleep 15–40 guests on-site, with options for additional accommodation nearby.</li>
+          <li><strong>Guest accommodation</strong> — Can your wedding party stay the night? This is one of the biggest advantages of a castle wedding and makes the whole weekend more special.</li>
+          <li><strong>Catering options</strong> — Does the castle have an in-house chef, work with approved caterers, or allow you to bring your own?</li>
+          <li><strong>Accessibility</strong> — Consider the location for your guests. Is there good transport access? Is the castle accessible for guests with mobility needs?</li>
+          <li><strong>Outdoor spaces</strong> — Gardens, terraces, and grounds can be just as important as the castle interiors for photos and reception drinks.</li>
+        </ul>
+        <p>
+          Browse our <a href="/castles">castle collection</a> to explore venues across the UK and find one that matches your vision.
+        </p>
+      </section>
+
+      <!-- Legal Requirements -->
+      <section class="guide-section">
+        <h2>Legal Requirements</h2>
+        <p>
+          If you plan to hold your ceremony at the castle, there are legal requirements to be aware of:
+        </p>
+        <ul class="guide-list">
+          <li><strong>Wedding licence</strong> — The castle must hold an approved premises licence for civil ceremonies. Not all castles have this, so check before booking if you want to marry on-site.</li>
+          <li><strong>Notice of marriage</strong> — You must give notice at your local register office at least 28 days before the wedding (29 days in Scotland).</li>
+          <li><strong>Registrar</strong> — You'll need to book a registrar from the local authority to conduct the ceremony. In Scotland, you can alternatively use a humanist celebrant or minister.</li>
+          <li><strong>Legal ceremony vs. blessing</strong> — If the castle isn't licensed, you can have a legal ceremony at a register office and then hold a symbolic blessing or celebration at the castle.</li>
+        </ul>
+      </section>
+
+      <!-- Planning Timeline -->
+      <section class="guide-section">
+        <h2>Planning Timeline</h2>
+        <ul class="guide-list">
+          <li><strong>18–12 months before:</strong> Choose and book your castle venue. Popular wedding castles book up 1–2 years in advance, especially for summer dates.</li>
+          <li><strong>12–9 months before:</strong> Book your photographer, caterer, florist, and entertainment. Send save-the-dates.</li>
+          <li><strong>9–6 months before:</strong> Finalise your guest list, choose your menu, and plan the ceremony details. Visit the castle to walk through logistics.</li>
+          <li><strong>6–3 months before:</strong> Send invitations, arrange accommodation for guests, organise transport, and confirm all suppliers.</li>
+          <li><strong>3–1 months before:</strong> Final fittings, seating plans, and detailed run-of-day planning. Confirm everything with the castle and suppliers.</li>
+          <li><strong>The week before:</strong> Final payments, pack for the wedding weekend, and send a detailed itinerary to your wedding party.</li>
+          <li><strong>The big day:</strong> Relax, enjoy, and let the castle's magic do its work. You've earned this.</li>
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="guide-cta">
+        <h3>Find Your Dream Castle Wedding Venue</h3>
+        <p>Browse our collection of stunning castles perfect for your special day.</p>
+        <a href="/castles" class="btn btn-accent">Browse Wedding Castles</a>
+      </div>
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .guide-hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+  }
+
+  .guide-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .guide-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 10, 20, 0.85) 0%, rgba(26, 20, 35, 0.75) 50%, rgba(45, 35, 64, 0.70) 100%);
+  }
+
+  .guide-hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    z-index: 1;
+  }
+
+  .guide-badge {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.25rem;
+  }
+
+  .guide-hero-content h1 {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+
+  .guide-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.125rem;
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .guide-article {
+    padding: 2rem 0 4rem;
+  }
+
+  .guide-lead {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .guide-section {
+    margin-bottom: 2.5rem;
+  }
+
+  .guide-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .guide-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 1rem;
+  }
+
+  .guide-section a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .guide-section a:hover {
+    color: var(--color-accent-light);
+  }
+
+  .guide-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style: disc;
+  }
+
+  .guide-list li {
+    margin-bottom: 0.75rem;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: #374151;
+  }
+
+  .guide-cta {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .guide-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  .guide-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .guide-hero {
+      height: 300px;
+    }
+
+    .guide-hero-content h1 {
+      font-size: 1.85rem;
+    }
+
+    .guide-cta {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
