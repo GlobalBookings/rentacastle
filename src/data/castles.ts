@@ -112,8 +112,8 @@ The surrounding area is a paradise for outdoor enthusiasts, with hillwalking, ka
     lng: -5.3167,
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -129,7 +129,7 @@ The surrounding area is a paradise for outdoor enthusiasts, with hillwalking, ka
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: 'https://www.amberleycastle.co.uk/',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'A luxury 900-year-old castle hotel in the South Downs, offering fine dining and elegant rooms within medieval walls and a working portcullis.',
     highlights: [
       '900-year-old curtain wall and portcullis',
@@ -191,7 +191,7 @@ Whether you're celebrating a milestone anniversary, planning an intimate wedding
     lat: 50.8933,
     lng: -0.5417,
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
@@ -209,7 +209,7 @@ Whether you're celebrating a milestone anniversary, planning an intimate wedding
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: 'https://www.langleycastle.com/',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'A genuine 14th-century medieval castle hotel near Hadrian\'s Wall, featuring 7-foot-thick walls, window seats, and an award-winning restaurant.',
     highlights: [
       'Genuine 14th-century medieval castle',
@@ -270,7 +270,7 @@ Langley Castle's location makes it the perfect base for exploring Northumberland
     lat: 54.9500,
     lng: -2.2833,
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
@@ -428,7 +428,7 @@ The castle's location in Fife is ideal for golfers — with St Andrews and its l
     lng: -2.9333,
     images: [
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -508,8 +508,8 @@ Beyond the castle walls, Glenapp offers a wealth of experiences that take full a
     lng: -5.0333,
     images: [
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -589,7 +589,7 @@ The castle's proximity to Edinburgh makes it uniquely versatile. Guests can enjo
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -605,7 +605,7 @@ The castle's proximity to Edinburgh makes it uniquely versatile. Guests can enjo
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: 'https://www.tullochcastle.co.uk/',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A 12th-century Highland castle hotel in Dingwall offering comfortable rooms, a lively bar, and easy access to the NC500 route.',
     highlights: [
       'Atmospheric 12th-century castle',
@@ -664,8 +664,8 @@ Tulloch Castle's location is one of its greatest assets. Dingwall sits at the st
     lat: 57.5967,
     lng: -4.4167,
     images: [
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -822,7 +822,7 @@ The castle's location in the Brecon Beacons is a major draw. The national park o
     lng: -3.6833,
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -902,7 +902,7 @@ Fonmon's gardens are a highlight in themselves. The walled garden, herbaceous bo
     images: [
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -918,7 +918,7 @@ Fonmon's gardens are a highlight in themselves. The walled garden, herbaceous bo
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: 'https://www.peckfortoncastle.co.uk/',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'A dramatic Victorian castle perched on a Cheshire hilltop, renowned as one of England\'s finest wedding and events venues with luxury hotel rooms.',
     highlights: [
       'Dramatic hilltop castle setting',
@@ -979,8 +979,8 @@ Peckforton's facilities extend beyond accommodation and dining. An indoor swimmi
     lat: 53.1167,
     lng: -2.6833,
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -1060,7 +1060,7 @@ The castle's location in County Durham provides easy access to some of the regio
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1076,7 +1076,7 @@ The castle's location in County Durham provides easy access to some of the regio
     bedrooms: 14,
     bathrooms: 12,
     bookingUrl: 'https://www.scone-palace.co.uk/',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'The historic crowning place of Scottish kings, offering exclusive-use accommodation in one of Scotland\'s most important heritage properties.',
     highlights: [
       'Crowning place of Scottish kings',
@@ -1137,9 +1137,9 @@ The palace's setting in Perthshire — often called the "gateway to the Highland
     lat: 56.4183,
     lng: -3.4017,
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1219,7 +1219,7 @@ Every detail at Aldourie is tailored to your group. The butler can arrange anyth
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1392,7 +1392,7 @@ Beyond the castle, the location in the heart of Warwickshire provides easy acces
     bedrooms: 2,
     bathrooms: 1,
     bookingUrl: 'https://www.bamburghcastle.com/',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A charming self-catering cottage at the foot of mighty Bamburgh Castle, one of the most spectacular castle settings in all of England.',
     highlights: [
       'At the foot of iconic Bamburgh Castle',
@@ -1451,8 +1451,8 @@ The wider Northumberland coast is an Area of Outstanding Natural Beauty, and fro
     lat: 55.6089,
     lng: -1.7106,
     images: [
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
@@ -1530,7 +1530,7 @@ Staying at the Castle of Mey places you on the famous North Coast 500 driving ro
     images: [
       'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1608,8 +1608,8 @@ The castle's location is strategically perfect: close enough to Edinburgh for gu
     lng: -3.3833,
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
     bookingPlatform: 'Direct',
   },
@@ -1688,7 +1688,7 @@ Inverlochy's location at the foot of Ben Nevis and at the southern end of the Gr
     lng: -5.0667,
     images: [
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     ],
     bookingPlatform: 'Relais & Châteaux',
@@ -1705,7 +1705,7 @@ Inverlochy's location at the foot of Ben Nevis and at the southern end of the Gr
     bedrooms: 1,
     bathrooms: 1,
     bookingUrl: 'https://www.castleleslie.com/',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'A romantic Irish castle estate on the shores of Glaslough Lake, set in 1,000 acres of ancient woodland and rolling countryside.',
     highlights: [
       'Set on 1,000-acre lakeside estate',
@@ -1767,7 +1767,7 @@ Dining at Castle Leslie celebrates the finest Irish produce, with the Snaffles R
     lat: 54.3167,
     lng: -6.8833,
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     ],
@@ -1884,8 +1884,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'uniquehomestays.com',
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
   },
   {
@@ -1900,7 +1900,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 10,
     bathrooms: 5,
     bookingUrl: 'https://www.sykescottages.co.uk/cottage/Yorkshire-Dales-South-Farnhill/Fernhill-Castle-1069783.html',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'This impressive Grade I listed fortified mansion rests in Farnhill near Cross Hills, West Yorkshire, and can sleep 30 people in 10 bedrooms. Four open fires. Historic property. Hot tub.',
     highlights: [
       'Grade I listed fortified mansion',
@@ -1919,9 +1919,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'sykescottages.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -1936,7 +1936,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 8,
     bathrooms: 4,
     bookingUrl: 'https://www.coolstays.com/property/beaufront-castle/28324',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'Magnificent castle overlooking the Tyne Valley in Northumberland, perfect for family get-togethers or groups of friends. Sleeps 16. £1800-3000 per night.',
     highlights: [
       'Magnificent Tyne Valley views',
@@ -1954,8 +1954,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'coolstays.com',
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     ],
   },
@@ -1971,7 +1971,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 14,
     bathrooms: 7,
     bookingUrl: 'https://www.coolstays.com/property/middleton-castle/27394',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'A 15th-century moated gem in Norfolk. Become Lord or Lady of the manor at your luxury, moated private castle for large groups in the heart of North Norfolk. Sleeps 30. £3900-5000 per night.',
     highlights: [
       '15th-century moated castle',
@@ -1990,7 +1990,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'coolstays.com',
     images: [
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     ],
@@ -2135,7 +2135,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     ],
   },
   {
@@ -2169,7 +2169,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'holidaycottages.co.uk',
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     ],
   },
@@ -2185,7 +2185,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 5,
     bathrooms: 2,
     bookingUrl: 'https://www.holidaycottages.co.uk/cottage/oc-38074-the-pink-castle',
-    image: 'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     description: 'Spectacular castle with views out to sea and magical gardens with a hot tub that overlooks the countryside. A sauna lies in one of the many turrets.',
     highlights: [
       'Spectacular sea views',
@@ -2204,9 +2204,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'holidaycottages.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
   },
   {
@@ -2241,8 +2241,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'holidaycottages.co.uk',
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
   },
   {
@@ -2257,7 +2257,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 5,
     bathrooms: 2,
     bookingUrl: 'https://www.snaptrip.com/holiday-parks/sundrum-castle',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'Sundrum Castle is sat in a secluded countryside setting, yet is just 6 miles from Ayr – one of Scotland\'s liveliest seaside towns.',
     highlights: [
       'Secluded countryside setting',
@@ -2275,9 +2275,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'snaptrip.com',
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -2292,7 +2292,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 2,
     bathrooms: 1,
     bookingUrl: 'https://www.airbnb.co.uk/rooms/643884759601892680',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'Dinton Castle is a 250-year-old landmark in Buckinghamshire, beautifully restored into a unique two-bedroom home. As featured on Grand Designs.',
     highlights: [
       '250-year-old landmark',
@@ -2311,8 +2311,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'airbnb.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     ],
   },
@@ -2328,7 +2328,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 11,
     bathrooms: 5,
     bookingUrl: 'https://www.thecountrycastlecompany.co.uk/venue/rivergaze-castle/',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Hire Rivergaze Castle exclusively for weddings and retreats in Cornwall. Sleeps 22, self-catered with river access, pool and woodland grounds.',
     highlights: [
       'Exclusive-use castle',
@@ -2348,7 +2348,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'thecountrycastlecompany.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     ],
@@ -2493,7 +2493,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     ],
   },
   {
@@ -2527,7 +2527,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'cottages.com',
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     ],
   },
@@ -2543,7 +2543,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 6,
     bathrooms: 3,
     bookingUrl: 'https://www.cottages.com/cottages/machermore-castle-machermore-castle-uk31878',
-    image: 'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     description: 'This wonderful castle is perfect for family gatherings, nestled within manicured grounds. Features dining room, kitchen with range, and beautiful setting.',
     highlights: [
       'Manicured castle grounds',
@@ -2561,9 +2561,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'cottages.com',
     images: [
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
   },
   {
@@ -2599,8 +2599,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'canopyandstars.co.uk',
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
   },
   {
@@ -2615,7 +2615,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 5,
     bathrooms: 2,
     bookingUrl: 'https://www.airbnb.co.uk/rooms/40028622',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'Reign in style in this majestic 17th-century castle in stunning Somerset countryside. Steeped in history, Walton Castle has been renovated for modern living.',
     highlights: [
       'Majestic 17th-century castle',
@@ -2633,9 +2633,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'airbnb.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -2650,7 +2650,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 4,
     bathrooms: 2,
     bookingUrl: 'https://www.snaptrip.com/properties/united-kingdom/england/peak-district/derbyshire/high-peak-district/hayfield/scout-castle',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'Nestled amidst the picturesque landscapes of the Peak District, Stonegate Castle invites guests to experience its historic charm and character.',
     highlights: [
       'Peak District setting',
@@ -2668,8 +2668,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'snaptrip.com',
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     ],
   },
@@ -2685,7 +2685,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 6,
     bathrooms: 3,
     bookingUrl: 'https://fortercastle.com/',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     description: 'Experience a truly unique getaway at Forter Castle, a stunning 450-year-old Scottish gem that blends historic charm with modern comforts.',
     highlights: [
       '450-year-old Scottish castle',
@@ -2703,7 +2703,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'fortercastle.com',
     images: [
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
       'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80',
     ],
@@ -2846,7 +2846,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     images: [
       'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     ],
   },
   {
@@ -2880,7 +2880,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'belle-isle.com',
     images: [
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
     ],
   },
@@ -2896,7 +2896,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 5,
     bathrooms: 2,
     bookingUrl: 'https://www.sawdays.co.uk/britain/scotland/scottish-borders/thirlestane-castle/',
-    image: 'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
     description: 'Five beautiful suites in the south wing of this fairy tale castle, filled with architectural features, family history and much grandeur.',
     highlights: [
       'Fairy tale castle',
@@ -2915,9 +2915,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'sawdays.co.uk',
     images: [
-      'https://images.unsplash.com/photo-1598928636135-d146006ff4be?w=800&q=80',
+      'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=800&q=80',
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     ],
   },
   {
@@ -2951,8 +2951,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bookingPlatform: 'narrowwatercastle.co.uk',
     images: [
       'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=800&q=80',
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     ],
   },
   {
@@ -2967,7 +2967,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 3,
     bathrooms: 1,
     bookingUrl: 'https://www.celticcastles.com/castles/lochhouse-tower/',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     description: 'Sleeping up to six overnight guests, Lochhouse Tower sits amidst six acres, beside its own loch, in rural Dumfries and Galloway. Built in 1536.',
     highlights: [
       'Built in 1536',
@@ -2985,9 +2985,9 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'celticcastles.com',
     images: [
-      'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     ],
   },
   {
@@ -3002,7 +3002,7 @@ Multiple dining options range from the formal Great Western restaurant — servi
     bedrooms: 8,
     bathrooms: 4,
     bookingUrl: 'https://www.oliverstravels.com/britain-ireland/cornwall/tamar-castle/',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     description: 'Discover the enchanting Tamar Castle, a historic gem nestled on the Cornish riverbank with stunning gardens and luxurious accommodation.',
     highlights: [
       'Historic Cornish castle',
@@ -3020,8 +3020,8 @@ Multiple dining options range from the formal Great Western restaurant — servi
     hasWifi: true,
     bookingPlatform: 'oliverstravels.com',
     images: [
-      'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
-      'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+      'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
+      'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
       'https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80',
     ],
   },
@@ -3047,7 +3047,7 @@ export const regions = [
     name: 'England',
     description:
       'England\'s castles span nearly a thousand years of history, from Norman strongholds and Tudor palaces to Victorian follies. Stay within medieval walls near Hadrian\'s Wall, dine where Henry VIII feasted, or enjoy a family adventure at one of England\'s most iconic fortresses.',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     castleCount: englandCount,
   },
   {
@@ -3063,7 +3063,7 @@ export const regions = [
     name: 'Northern Ireland',
     description:
       'Northern Ireland\'s castle estates blend Irish warmth with dramatic landscapes. Stay on historic lakeside estates, explore the Causeway Coast, and experience the unique hospitality that has welcomed poets, politicians, and princes for centuries.',
-    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=800&q=80',
     castleCount: northernIrelandCount,
   },
 ];

@@ -123,7 +123,7 @@ export const blogPosts: BlogPost[] = [
       'Wales is home to more castles per square mile than anywhere else in the world. Learn how to find, book and enjoy the perfect Welsh castle rental with our complete guide to castle stays in Wales.',
     date: '2026-02-10',
     category: 'Regional',
-    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=800&q=80',
     readTime: '10 min read',
   },
   {
@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
       'Turn family holidays into epic adventures. Discover castles with spacious grounds, games rooms, and activities that will keep children entertained while parents enjoy the historic splendour.',
     date: '2026-02-05',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1580677616212-2fa929e9c2cd?w=800&q=80',
     readTime: '8 min read',
   },
   {
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
       'From aristocratic grand tours to modern Airbnb listings, the story of castle tourism in Britain spans centuries. Explore how these ancient fortresses became some of the country\'s most sought-after holiday destinations.',
     date: '2026-01-18',
     category: 'Guides',
-    image: 'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1553434320-e9f5757140b1?w=800&q=80',
     readTime: '11 min read',
   },
   {
