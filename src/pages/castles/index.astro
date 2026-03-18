@@ -1,0 +1,169 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { castles, regions } from '../../data/castles';
+
+const regionNames = [...new Set(castles.map(c => c.region))].sort();
+const types = [...new Set(castles.map(c => c.type))].sort();
+---
+
+<BaseLayout title="Castle Rentals UK - Browse All Castles | RentACastle" description="Browse our collection of stunning castles available to rent across the United Kingdom. From Scottish tower houses to English country castles.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Castles' }]} />
+  </div>
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1600&q=80" alt="Historic UK castle surrounded by rolling green countryside" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Castle Directory</span>
+      <h1>Discover UK Castle Rentals</h1>
+      <p>Browse {castles.length} extraordinary castles available to rent across Scotland, England, Wales, and Northern Ireland. Every listing includes detailed amenities, history, and direct booking links.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="filter-hint">Looking for castles in a specific region? Browse by <a href="/regions">region</a> or use the directory below to find your perfect castle stay.</p>
+
+      <div class="grid grid-3">
+        {castles.map(castle => (
+          <a href={`/castles/${castle.slug}`} class="castle-card card">
+            <div class="castle-card-img-wrap">
+              <img src={castle.image} alt={castle.name} class="card-image" loading="lazy" />
+              <span class="region-badge">{castle.region}</span>
+            </div>
+            <div class="card-body">
+              <h3>{castle.name}</h3>
+              <p class="castle-meta">{castle.type} · {castle.priceRange}</p>
+              <p class="castle-sleeps">Sleeps {castle.sleeps}</p>
+              <p class="castle-desc">{castle.shortDescription || castle.description.slice(0, 140)}...</p>
+              <div class="castle-card-footer">
+                <span class="castle-price">{castle.avgPrice}</span>
+                <span class="castle-link">View Castle →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Explore by Region</h2>
+        <p>Each region of the UK offers a unique castle experience.</p>
+      </div>
+      <div class="grid grid-4">
+        {regions.map(region => (
+          <a href={`/regions/${region.slug}`} class="card">
+            <img src={region.image} alt={region.name} class="card-image" loading="lazy" />
+            <div class="card-body">
+              <h3>{region.name}</h3>
+              <p>{region.description.slice(0, 100)}...</p>
+              <span style="display: inline-block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--color-accent); font-weight: 600;">Explore Region →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .filter-hint {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .filter-hint a {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .castle-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .castle-card-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .castle-card-img-wrap .card-image {
+    height: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  .castle-card:hover .card-image {
+    transform: scale(1.05);
+  }
+
+  .region-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .castle-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .castle-meta {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .castle-sleeps {
+    font-size: 0.82rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .castle-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .castle-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .castle-price {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-primary);
+  }
+
+  .castle-link {
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>

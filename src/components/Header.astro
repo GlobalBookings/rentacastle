@@ -1,0 +1,804 @@
+---
+const currentPath = Astro.url.pathname;
+
+const regionLinks = [
+  { name: 'Scotland', href: '/regions/scotland/' },
+  { name: 'England', href: '/regions/england/' },
+  { name: 'Wales', href: '/regions/wales/' },
+  { name: 'Northern Ireland', href: '/regions/northern-ireland/' },
+  { name: 'Scottish Highlands', href: '/regions/scottish-highlands/' },
+  { name: 'Lake District', href: '/regions/lake-district/' },
+  { name: 'Cornwall', href: '/regions/cornwall/' },
+  { name: 'Yorkshire', href: '/regions/yorkshire/' },
+  { name: 'Cotswolds', href: '/regions/cotswolds/' },
+  { name: 'Pembrokeshire', href: '/regions/pembrokeshire/' },
+  { name: 'Norfolk', href: '/regions/norfolk/' },
+  { name: 'Northumberland', href: '/regions/northumberland/' },
+];
+
+const regionFeatured = [
+  {
+    title: 'Scotland Castles',
+    description: 'Explore dramatic castles amid the Scottish Highlands',
+    image: 'https://images.unsplash.com/photo-1534361960057-19889db9621e?w=400&q=80',
+    href: '/regions/scotland/',
+  },
+  {
+    title: 'English Castles',
+    description: 'Discover stately castles across the English countryside',
+    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=400&q=80',
+    href: '/regions/england/',
+  },
+  {
+    title: 'Welsh Castles',
+    description: 'Stay in ancient fortresses throughout Wales',
+    image: 'https://images.unsplash.com/photo-1580910365203-91ea9115a319?w=400&q=80',
+    href: '/regions/wales/',
+  },
+];
+
+const typeLinks = [
+  { name: 'Wedding Castles', href: '/castle-types/wedding-castles/' },
+  { name: 'Luxury Castles', href: '/castle-types/luxury-castles/' },
+  { name: 'Budget-Friendly Castles', href: '/castle-types/budget-friendly-castles/' },
+  { name: 'Pet-Friendly Castles', href: '/castle-types/pet-friendly-castles/' },
+  { name: 'Castles with Hot Tubs', href: '/castle-types/castles-with-hot-tubs/' },
+  { name: 'Family Castles', href: '/castle-types/family-castles/' },
+  { name: 'Romantic Castles', href: '/castle-types/romantic-castles/' },
+  { name: 'Historic Castles', href: '/castle-types/historic-castles/' },
+  { name: 'Castles for Parties', href: '/castle-types/castles-for-parties/' },
+  { name: 'Self-Catering Castles', href: '/castle-types/self-catering-castles/' },
+];
+
+const typeFeatured = [
+  {
+    title: 'Wedding Castles',
+    description: 'Say "I do" in a fairytale castle setting',
+    image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=400&q=80',
+    href: '/castle-types/wedding-castles/',
+  },
+  {
+    title: 'Luxury Castles',
+    description: 'Indulge in five-star castle experiences',
+    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&q=80',
+    href: '/castle-types/luxury-castles/',
+  },
+  {
+    title: 'Family Castles',
+    description: 'Create unforgettable family memories',
+    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=80',
+    href: '/castle-types/family-castles/',
+  },
+];
+
+const planLinks = [
+  { name: 'How to Rent a Castle', href: '/guides/how-to-rent-a-castle/' },
+  { name: 'Castle Stay Packing List', href: '/guides/packing-list/' },
+  { name: 'Best Time to Visit', href: '/guides/best-time-to-visit/' },
+  { name: 'Castle Wedding Guide', href: '/guides/castle-wedding-guide/' },
+  { name: 'Group Booking Guide', href: '/guides/group-booking-guide/' },
+  { name: 'Castle Etiquette', href: '/guides/castle-etiquette/' },
+  { name: 'FAQ', href: '/faq/' },
+];
+
+const planFeatured = [
+  {
+    title: 'Castle Wedding Guide',
+    description: 'Everything you need for your perfect castle wedding',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80',
+    href: '/guides/castle-wedding-guide/',
+  },
+  {
+    title: 'Packing List',
+    description: 'What to bring for your castle stay',
+    image: 'https://images.unsplash.com/photo-1553913861-c0fddf2619ee?w=400&q=80',
+    href: '/guides/packing-list/',
+  },
+  {
+    title: 'FAQ',
+    description: 'Answers to common castle rental questions',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&q=80',
+    href: '/faq/',
+  },
+];
+---
+
+<header class="site-header" id="site-header">
+  <!-- Utility Bar -->
+  <div class="utility-bar">
+    <div class="container">
+      <div class="utility-bar__inner">
+        <div class="utility-bar__links">
+          <a href="/castles/">Explore Castles</a>
+          <a href="/castle-types/wedding-castles/">Wedding Venues</a>
+          <a href="/partners">List Your Castle</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="main-nav__inner">
+        <!-- Logo -->
+        <a href="/" class="logo" aria-label="RentACastle Home">
+          <span class="logo__icon">&#127984;</span>
+          <span class="logo__text">RentACastle</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links" id="nav-links">
+          <!-- Regions Mega Menu -->
+          <div class="nav-item nav-item--mega">
+            <button
+              class="nav-link nav-link--dropdown"
+              aria-expanded="false"
+              aria-controls="mega-regions"
+              data-mega="regions"
+            >
+              Regions
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mega-panel" id="mega-regions" role="region" aria-label="Regions menu">
+              <div class="container">
+                <div class="mega-panel__inner">
+                  <div class="mega-panel__links">
+                    <h3 class="mega-panel__title">Explore by Region</h3>
+                    <ul class="mega-panel__list">
+                      {regionLinks.map((link) => (
+                        <li><a href={link.href}>{link.name}</a></li>
+                      ))}
+                    </ul>
+                    <a href="/regions/" class="mega-panel__view-all">View all regions →</a>
+                  </div>
+                  <div class="mega-panel__featured">
+                    {regionFeatured.map((item) => (
+                      <a href={item.href} class="mega-card">
+                        <div class="mega-card__image">
+                          <img src={item.image} alt={item.title} loading="lazy" />
+                        </div>
+                        <div class="mega-card__body">
+                          <h4>{item.title}</h4>
+                          <p>{item.description}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Castle Types Mega Menu -->
+          <div class="nav-item nav-item--mega">
+            <button
+              class="nav-link nav-link--dropdown"
+              aria-expanded="false"
+              aria-controls="mega-types"
+              data-mega="types"
+            >
+              Castle Types
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mega-panel" id="mega-types" role="region" aria-label="Castle Types menu">
+              <div class="container">
+                <div class="mega-panel__inner">
+                  <div class="mega-panel__links">
+                    <h3 class="mega-panel__title">Browse Castle Types</h3>
+                    <ul class="mega-panel__list">
+                      {typeLinks.map((link) => (
+                        <li><a href={link.href}>{link.name}</a></li>
+                      ))}
+                    </ul>
+                    <a href="/castle-types/" class="mega-panel__view-all">View all types →</a>
+                  </div>
+                  <div class="mega-panel__featured">
+                    {typeFeatured.map((item) => (
+                      <a href={item.href} class="mega-card">
+                        <div class="mega-card__image">
+                          <img src={item.image} alt={item.title} loading="lazy" />
+                        </div>
+                        <div class="mega-card__body">
+                          <h4>{item.title}</h4>
+                          <p>{item.description}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Plan Your Stay Mega Menu -->
+          <div class="nav-item nav-item--mega">
+            <button
+              class="nav-link nav-link--dropdown"
+              aria-expanded="false"
+              aria-controls="mega-plan"
+              data-mega="plan"
+            >
+              Plan Your Stay
+              <svg class="nav-chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="mega-panel" id="mega-plan" role="region" aria-label="Plan Your Stay menu">
+              <div class="container">
+                <div class="mega-panel__inner">
+                  <div class="mega-panel__links">
+                    <h3 class="mega-panel__title">Plan Your Stay</h3>
+                    <ul class="mega-panel__list">
+                      {planLinks.map((link) => (
+                        <li><a href={link.href}>{link.name}</a></li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="mega-panel__featured">
+                    {planFeatured.map((item) => (
+                      <a href={item.href} class="mega-card">
+                        <div class="mega-card__image">
+                          <img src={item.image} alt={item.title} loading="lazy" />
+                        </div>
+                        <div class="mega-card__body">
+                          <h4>{item.title}</h4>
+                          <p>{item.description}</p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Direct Links -->
+          <div class="nav-item">
+            <a href="/blog/" class="nav-link">Blog</a>
+          </div>
+          <div class="nav-item">
+            <a href="/partners" class="nav-link">List Your Castle</a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="mobile-toggle"
+          id="mobile-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Toggle navigation menu"
+        >
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+          <span class="mobile-toggle__bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Backdrop -->
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+</header>
+
+<style>
+  /* ========================================
+     Utility Bar
+     ======================================== */
+  .utility-bar {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    padding: 0.4rem 0;
+    position: relative;
+    z-index: calc(var(--z-sticky) + 2);
+  }
+
+  .utility-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .utility-bar__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .utility-bar__links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-fast);
+  }
+
+  .utility-bar__links a:hover {
+    color: var(--color-accent-light);
+  }
+
+  /* ========================================
+     Main Navigation
+     ======================================== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .site-header.scrolled .main-nav {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .site-header.hidden {
+    transform: translateY(-100%);
+  }
+
+  .main-nav {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-bg-alt);
+    position: relative;
+    z-index: calc(var(--z-sticky) + 1);
+  }
+
+  .main-nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    flex-shrink: 0;
+  }
+
+  .logo:hover {
+    color: var(--color-primary);
+  }
+
+  .logo__icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  .logo__text {
+    letter-spacing: -0.02em;
+  }
+
+  /* Nav Links */
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 100%;
+  }
+
+  .nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0 var(--space-md);
+    height: 100%;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  .nav-chevron {
+    transition: transform var(--transition-fast);
+  }
+
+  .nav-link[aria-expanded="true"] .nav-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ========================================
+     Mega Panel
+     ======================================== */
+  .mega-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    border-top: 2px solid var(--color-accent);
+    box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all var(--transition-base);
+    z-index: var(--z-dropdown);
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .mega-panel.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mega-panel__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-2xl);
+    padding: var(--space-2xl) 0;
+  }
+
+  .mega-panel__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    color: var(--color-primary);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+  }
+
+  .mega-panel__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mega-panel__list li a {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .mega-panel__list li a:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary);
+    padding-left: 1rem;
+  }
+
+  .mega-panel__view-all {
+    display: inline-block;
+    margin-top: var(--space-lg);
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .mega-panel__view-all:hover {
+    color: var(--color-primary);
+  }
+
+  .mega-panel__featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  /* Mega Card */
+  .mega-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    text-decoration: none;
+    background: var(--color-bg);
+    transition: all var(--transition-base);
+  }
+
+  .mega-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .mega-card__image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .mega-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .mega-card:hover .mega-card__image img {
+    transform: scale(1.05);
+  }
+
+  .mega-card__body {
+    padding: var(--space-sm) var(--space-md) var(--space-md);
+  }
+
+  .mega-card__body h4 {
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    color: var(--color-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .mega-card__body p {
+    font-size: var(--text-xs);
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Backdrop */
+  .nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: calc(var(--z-sticky) - 1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .nav-backdrop.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ========================================
+     Mobile Toggle
+     ======================================== */
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    z-index: calc(var(--z-sticky) + 3);
+  }
+
+  .mobile-toggle__bar {
+    width: 24px;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+  }
+
+  .mobile-toggle[aria-expanded="true"] .mobile-toggle__bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-toggle[aria-expanded="true"] .mobile-toggle__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-toggle[aria-expanded="true"] .mobile-toggle__bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ========================================
+     Responsive
+     ======================================== */
+  @media (max-width: 1024px) {
+    .utility-bar {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 400px;
+      background: var(--color-white);
+      flex-direction: column;
+      align-items: stretch;
+      padding: 80px var(--space-lg) var(--space-lg);
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform var(--transition-base);
+      box-shadow: var(--shadow-xl);
+      z-index: calc(var(--z-sticky) + 2);
+      height: auto;
+    }
+
+    .nav-links.open {
+      transform: translateX(0);
+    }
+
+    .nav-item {
+      height: auto;
+      flex-direction: column;
+    }
+
+    .nav-link {
+      height: auto;
+      padding: var(--space-md);
+      font-size: var(--text-base);
+      justify-content: space-between;
+      border-bottom: 1px solid var(--color-bg-alt);
+    }
+
+    .mega-panel {
+      position: static;
+      border-top: none;
+      box-shadow: none;
+      transform: none;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--transition-base), opacity var(--transition-base);
+    }
+
+    .mega-panel.active {
+      max-height: 2000px;
+    }
+
+    .mega-panel__inner {
+      grid-template-columns: 1fr;
+      padding: var(--space-md) 0;
+      gap: var(--space-md);
+    }
+
+    .mega-panel__featured {
+      grid-template-columns: 1fr;
+      display: none;
+    }
+
+    .mega-panel__list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('site-header');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const backdrop = document.getElementById('nav-backdrop');
+    const megaButtons = document.querySelectorAll('[data-mega]');
+
+    let lastScroll = 0;
+    let activePanel = null;
+
+    // Scroll behavior
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      if (currentScroll > lastScroll && currentScroll > 200 && !activePanel) {
+        header.classList.add('hidden');
+      } else {
+        header.classList.remove('hidden');
+      }
+
+      lastScroll = currentScroll;
+    });
+
+    // Mobile toggle
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+      mobileToggle.setAttribute('aria-expanded', !isOpen);
+      navLinks.classList.toggle('open');
+      backdrop.classList.toggle('active');
+      document.body.style.overflow = isOpen ? '' : 'hidden';
+    });
+
+    // Mega menu buttons
+    megaButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const panelId = `mega-${button.dataset.mega}`;
+        const panel = document.getElementById(panelId);
+        const isActive = button.getAttribute('aria-expanded') === 'true';
+
+        // Close all panels first
+        megaButtons.forEach((btn) => {
+          btn.setAttribute('aria-expanded', 'false');
+          const p = document.getElementById(`mega-${btn.dataset.mega}`);
+          if (p) p.classList.remove('active');
+        });
+
+        if (!isActive) {
+          button.setAttribute('aria-expanded', 'true');
+          panel.classList.add('active');
+          backdrop.classList.add('active');
+          activePanel = panel;
+        } else {
+          backdrop.classList.remove('active');
+          activePanel = null;
+        }
+      });
+    });
+
+    // Close on backdrop click
+    backdrop.addEventListener('click', () => {
+      megaButtons.forEach((btn) => {
+        btn.setAttribute('aria-expanded', 'false');
+        const p = document.getElementById(`mega-${btn.dataset.mega}`);
+        if (p) p.classList.remove('active');
+      });
+      backdrop.classList.remove('active');
+      activePanel = null;
+
+      // Also close mobile menu
+      mobileToggle.setAttribute('aria-expanded', 'false');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        megaButtons.forEach((btn) => {
+          btn.setAttribute('aria-expanded', 'false');
+          const p = document.getElementById(`mega-${btn.dataset.mega}`);
+          if (p) p.classList.remove('active');
+        });
+        backdrop.classList.remove('active');
+        activePanel = null;
+
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        navLinks.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Close mega menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (activePanel && !e.target.closest('.nav-item--mega') && !e.target.closest('.mega-panel')) {
+        megaButtons.forEach((btn) => {
+          btn.setAttribute('aria-expanded', 'false');
+          const p = document.getElementById(`mega-${btn.dataset.mega}`);
+          if (p) p.classList.remove('active');
+        });
+        backdrop.classList.remove('active');
+        activePanel = null;
+      }
+    });
+  });
+</script>

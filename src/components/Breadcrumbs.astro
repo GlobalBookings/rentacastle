@@ -1,0 +1,126 @@
+---
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+export interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+const siteUrl = 'https://rentacastle.co.uk';
+
+// Build BreadcrumbList structured data
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': siteUrl,
+    },
+    ...items.map((item, index) => ({
+      '@type': 'ListItem',
+      'position': index + 2,
+      'name': item.label,
+      ...(item.href ? { 'item': `${siteUrl}${item.href}` } : {}),
+    })),
+  ],
+};
+---
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item">
+        <a href="/" class="breadcrumbs__link">
+          <svg class="breadcrumbs__home-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1.75 7L7 2.33333L12.25 7M3.5 5.83333V11.0833C3.5 11.4055 3.76117 11.6667 4.08333 11.6667H5.83333V8.75H8.16667V11.6667H9.91667C10.2388 11.6667 10.5 11.4055 10.5 11.0833V5.83333" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Home</span>
+        </a>
+      </li>
+      {items.map((item, index) => (
+        <li class="breadcrumbs__item">
+          <svg class="breadcrumbs__separator" width="8" height="8" viewBox="0 0 8 8" fill="none">
+            <path d="M3 1.5L5.5 4L3 6.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          {item.href && index < items.length - 1 ? (
+            <a href={item.href} class="breadcrumbs__link">{item.label}</a>
+          ) : (
+            <span class="breadcrumbs__current" aria-current="page">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumbs {
+    background-color: var(--color-bg-alt);
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .breadcrumbs__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: var(--text-sm);
+  }
+
+  .breadcrumbs__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumbs__link:hover {
+    color: var(--color-accent);
+  }
+
+  .breadcrumbs__home-icon {
+    flex-shrink: 0;
+  }
+
+  .breadcrumbs__separator {
+    color: var(--color-text-light);
+    opacity: 0.5;
+    flex-shrink: 0;
+    margin: 0 0.25rem;
+  }
+
+  .breadcrumbs__current {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .breadcrumbs {
+      padding: var(--space-sm) 0;
+    }
+
+    .breadcrumbs__item {
+      font-size: var(--text-xs);
+    }
+  }
+</style>

@@ -1,0 +1,673 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { castles, regions } from '../../data/castles';
+import { blogPosts } from '../../data/blogPosts';
+
+export function getStaticPaths() {
+  return castles.map(castle => ({
+    params: { slug: castle.slug },
+    props: { castle },
+  }));
+}
+
+const { castle } = Astro.props;
+const otherCastles = castles.filter(c => c.slug !== castle.slug && c.region === castle.region).slice(0, 4);
+const galleryImages = castle.images?.length ? castle.images : [castle.image];
+const starWord = castle.reviewScore ? (castle.reviewScore >= 9 ? 'Exceptional' : castle.reviewScore >= 8 ? 'Very Good' : castle.reviewScore >= 7 ? 'Good' : 'Fair') : '';
+const regionSlug = castle.region.toLowerCase().replace(/\s+/g, '-');
+const regionData = regions.find(r => r.name === castle.region);
+const relatedPosts = blogPosts.slice(0, 4);
+
+const castleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: castle.name,
+  description: castle.description,
+  image: castle.image,
+  address: castle.address ? { '@type': 'PostalAddress', streetAddress: castle.address } : undefined,
+  priceRange: castle.priceRange,
+  numberOfRooms: castle.bedrooms || undefined,
+  ...(castle.reviewScore ? { aggregateRating: { '@type': 'AggregateRating', ratingValue: castle.reviewScore, bestRating: 10, reviewCount: castle.reviewCount || 1 } } : {}),
+  ...(castle.lat && castle.lng ? { geo: { '@type': 'GeoCoordinates', latitude: castle.lat, longitude: castle.lng } } : {}),
+  amenityFeature: castle.amenities?.map(a => ({ '@type': 'LocationFeatureSpecification', name: a, value: true })) || [],
+  url: `https://rentacastle.co.uk/castles/${castle.slug}`,
+};
+---
+
+<BaseLayout title={`${castle.name} | Castle Rental in ${castle.region} | RentACastle`} description={`Detailed guide to ${castle.name} in ${castle.region}. ${castle.avgPrice}. Sleeps ${castle.sleeps}. Amenities, history, photos, and direct booking links.`}>
+
+  <div class="container">
+    <Breadcrumbs items={[
+      { label: 'Castles', href: '/castles' },
+      { label: castle.region, href: `/regions/${regionSlug}` },
+      { label: castle.name },
+    ]} />
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(castleSchema)} />
+
+  <!-- Hero with gallery -->
+  <section class="castle-hero">
+    <div class="hero-gallery">
+      <div class="hero-main-img">
+        <img src={galleryImages[0]} alt={castle.name} />
+      </div>
+      {galleryImages.length > 1 && (
+        <div class="hero-side-imgs">
+          {galleryImages.slice(1, 5).map((img, i) => (
+            <div class="hero-thumb">
+              <img src={img} alt={`${castle.name} - View ${i + 2}`} loading="lazy" />
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+    <div class="hero-overlay">
+      <div class="container">
+        <span class="badge">{castle.region}</span>
+        <h1>{castle.name}</h1>
+        <div class="hero-meta">
+          <span>{castle.type}</span>
+          <span class="hero-sep">·</span>
+          <span>{castle.priceRange}</span>
+          <span class="hero-sep">·</span>
+          <span>Sleeps {castle.sleeps}</span>
+          {castle.reviewScore && (
+            <>
+              <span class="hero-sep">·</span>
+              <span class="hero-review">{castle.reviewScore}/10 {castle.reviewLabel || starWord}</span>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick booking bar -->
+  <div class="booking-strip">
+    <div class="container booking-strip-inner">
+      <div class="booking-strip-price">
+        <span class="strip-label">From</span>
+        <span class="strip-price">{castle.avgPrice.replace('From ', '')}</span>
+      </div>
+      <a href={castle.bookingUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent">
+        Check Availability →
+      </a>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <section class="section">
+    <div class="container">
+      <div class="castle-layout">
+        <div class="castle-main">
+
+          <!-- Overview -->
+          <div class="content-section">
+            <h2>Overview</h2>
+            {castle.overview ? (
+              <p class="overview-text">{castle.overview}</p>
+            ) : (
+              <p class="overview-text">{castle.description}</p>
+            )}
+            <div class="castle-stats">
+              <div class="stat-box">
+                <span class="stat-icon">🛏️</span>
+                <span class="stat-value">{castle.sleeps}</span>
+                <span class="stat-name">Sleeps</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-icon">🚪</span>
+                <span class="stat-value">{castle.bedrooms}</span>
+                <span class="stat-name">Bedrooms</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-icon">🚿</span>
+                <span class="stat-value">{castle.bathrooms}</span>
+                <span class="stat-name">Bathrooms</span>
+              </div>
+              {castle.yearBuilt && (
+                <div class="stat-box">
+                  <span class="stat-icon">🏰</span>
+                  <span class="stat-value">{castle.yearBuilt}</span>
+                  <span class="stat-name">Year Built</span>
+                </div>
+              )}
+            </div>
+            {castle.address && <p class="castle-address"><strong>Address:</strong> {castle.address}</p>}
+          </div>
+
+          <!-- Guest reviews callout -->
+          {castle.reviewScore && (
+            <div class="review-callout">
+              <div class="review-score-box">
+                <span class="review-number">{castle.reviewScore}</span>
+                <span class="review-scale">/10</span>
+              </div>
+              <div class="review-detail">
+                <strong>{castle.reviewLabel || starWord}</strong>
+                {castle.reviewCount && <span class="review-count">Based on {castle.reviewCount.toLocaleString()} verified guest reviews</span>}
+              </div>
+            </div>
+          )}
+
+          <!-- Amenities -->
+          {castle.amenities && castle.amenities.length > 0 && (
+            <div class="content-section">
+              <h2>Amenities</h2>
+              <div class="amenities-grid">
+                {castle.amenities.map(a => (
+                  <div class="amenity-item">
+                    <span class="amenity-icon">✓</span>
+                    <span>{a}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Castle History -->
+          {castle.history && (
+            <div class="content-section">
+              <h2>Castle History</h2>
+              <div class="history-section">
+                <p>{castle.history}</p>
+              </div>
+            </div>
+          )}
+
+          <!-- Key Features -->
+          <div class="content-section">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+              {castle.petFriendly && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">🐾</span>
+                  <span>Pet Friendly</span>
+                </div>
+              )}
+              {castle.weddingSuitable && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">💒</span>
+                  <span>Wedding Venue</span>
+                </div>
+              )}
+              {castle.selfCatering && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">🍳</span>
+                  <span>Self Catering</span>
+                </div>
+              )}
+              {castle.hasHotTub && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">🛁</span>
+                  <span>Hot Tub</span>
+                </div>
+              )}
+              {castle.hasPool && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">🏊</span>
+                  <span>Swimming Pool</span>
+                </div>
+              )}
+              {castle.hasWifi && (
+                <div class="feature-item feature-yes">
+                  <span class="feature-icon">📶</span>
+                  <span>WiFi Available</span>
+                </div>
+              )}
+              {!castle.petFriendly && (
+                <div class="feature-item feature-no">
+                  <span class="feature-icon">🐾</span>
+                  <span>No Pets</span>
+                </div>
+              )}
+              {!castle.hasHotTub && (
+                <div class="feature-item feature-no">
+                  <span class="feature-icon">🛁</span>
+                  <span>No Hot Tub</span>
+                </div>
+              )}
+              {!castle.hasPool && (
+                <div class="feature-item feature-no">
+                  <span class="feature-icon">🏊</span>
+                  <span>No Pool</span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <!-- Location & Nearby -->
+          {castle.nearbyAttractions && castle.nearbyAttractions.length > 0 && (
+            <div class="content-section">
+              <h2>Location & Nearby Attractions</h2>
+              <p><strong>Region:</strong> {castle.region}</p>
+              <div class="nearby-grid">
+                {castle.nearbyAttractions.map(a => (
+                  <div class="nearby-item">
+                    <span class="nearby-pin">📍</span>
+                    <span>{a}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Booking tip -->
+          <div class="content-section">
+            <div class="tip-box">
+              <strong>Booking Tip:</strong> Rates at {castle.name} vary significantly by season. Summer (June–August) and school holidays see the highest demand — book 3–6 months ahead for the best availability. Autumn offers stunning foliage and lower rates, while winter provides a magical, cosy castle experience. Many castles offer midweek discounts and short-break rates outside of peak season.
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="castle-sidebar">
+          <div class="booking-card">
+            <div class="booking-price">{castle.avgPrice}</div>
+            <a href={castle.bookingUrl} target="_blank" rel="noopener sponsored" class="btn btn-accent booking-btn">
+              Check Availability →
+            </a>
+            <p class="booking-note">Prices vary by date and season. Click to see current rates and availability.</p>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Quick Facts</h3>
+            <div class="fact-row"><span>Type</span><span>{castle.type}</span></div>
+            <div class="fact-row"><span>Region</span><span>{castle.region}</span></div>
+            <div class="fact-row"><span>Sleeps</span><span>{castle.sleeps} guests</span></div>
+            <div class="fact-row"><span>Bedrooms</span><span>{castle.bedrooms}</span></div>
+            <div class="fact-row"><span>Bathrooms</span><span>{castle.bathrooms}</span></div>
+            <div class="fact-row"><span>Price</span><span>{castle.priceRange} · {castle.avgPrice}</span></div>
+            {castle.yearBuilt && <div class="fact-row"><span>Year Built</span><span>{castle.yearBuilt}</span></div>}
+          </div>
+
+          <div class="sidebar-card">
+            <h3>Plan Your Castle Stay</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 0.75rem;">Read our guides for tips on renting a castle in the UK.</p>
+            <a href="/blog" class="btn btn-primary sidebar-btn">Read Our Blog →</a>
+          </div>
+
+          <div class="sidebar-card">
+            <h3>More Castles in {castle.region}</h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-light); margin-bottom: 0.75rem;">Explore other castle rentals in {castle.region}.</p>
+            <a href={`/regions/${regionSlug}`} class="btn btn-outline sidebar-btn">View {castle.region} Castles →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  {relatedPosts.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Castle Guides & Tips</h2>
+          <p>Plan your perfect castle stay with our insider guides.</p>
+        </div>
+        <div class="grid grid-4">
+          {relatedPosts.map(post => (
+            <a href={`/blog/${post.slug}`} class="card" style="display: block;">
+              <img src={post.image} alt={post.title} class="card-image" style="height: 160px;" loading="lazy" />
+              <div class="card-body">
+                <span class="tag">{post.category}</span>
+                <h3 style="font-size: 0.95rem; margin-bottom: 0.25rem;">{post.title}</h3>
+                <span style="display: inline-block; margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Read Guide →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related castles -->
+  {otherCastles.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <h2>More Castles in {castle.region}</h2>
+          <p>Compare other castle rentals nearby.</p>
+        </div>
+        <div class="grid grid-4">
+          {otherCastles.map(c => (
+            <a href={`/castles/${c.slug}`} class="card">
+              <img src={c.image} alt={c.name} class="card-image" style="height: 160px;" loading="lazy" />
+              <div class="card-body">
+                <span class="mini-meta">{c.type} · {c.priceRange}</span>
+                <h3 style="font-size: 0.95rem;">{c.name}</h3>
+                <p style="font-size: 0.8rem; color: var(--color-text-light);">Sleeps {c.sleeps} · {c.avgPrice}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .castle-hero { position: relative; }
+
+  .hero-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4px;
+    max-height: 420px;
+    overflow: hidden;
+  }
+
+  .hero-main-img img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+  }
+
+  .hero-side-imgs {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .hero-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 3rem 0 1.5rem;
+    color: white;
+  }
+
+  .hero-overlay h1 { color: white; margin-bottom: 0.5rem; }
+  .hero-overlay .badge { margin-bottom: 0.5rem; }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    flex-wrap: wrap;
+  }
+
+  .hero-sep { opacity: 0.5; }
+  .hero-review { color: var(--color-accent); font-weight: 600; }
+
+  .booking-strip {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 60px;
+    z-index: 50;
+  }
+
+  .booking-strip-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .strip-label { font-size: 0.8rem; opacity: 0.7; }
+  .strip-price { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-left: 0.5rem; }
+
+  .castle-layout {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .content-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .content-section:last-child { border-bottom: none; }
+
+  .content-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .overview-text {
+    font-size: 1.02rem;
+    line-height: 1.85;
+    color: var(--color-text);
+  }
+
+  .castle-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .stat-box {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .stat-icon {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-value {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .stat-name {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    margin-top: 0.15rem;
+  }
+
+  .castle-address {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    color: var(--color-text-light);
+  }
+
+  .review-callout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    background: #f0f7f0;
+    border-radius: var(--radius);
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .review-score-box {
+    background: var(--color-primary);
+    color: white;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    min-width: 70px;
+    flex-shrink: 0;
+  }
+
+  .review-number { font-size: 1.5rem; font-weight: 700; }
+  .review-scale { font-size: 0.8rem; opacity: 0.7; }
+
+  .review-detail strong { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
+  .review-count { font-size: 0.85rem; color: var(--color-text-light); }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+  }
+
+  .amenity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.92rem;
+    padding: 0.4rem 0;
+  }
+
+  .amenity-icon { color: var(--color-accent); font-weight: 700; }
+
+  .history-section {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .history-section p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .feature-yes {
+    background: #f0f7f0;
+    color: var(--color-primary);
+  }
+
+  .feature-no {
+    background: #f5f5f5;
+    color: var(--color-text-light);
+    opacity: 0.6;
+  }
+
+  .feature-icon { font-size: 1.1rem; }
+
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .nearby-item {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nearby-pin { font-size: 0.85rem; }
+
+  .tip-box {
+    background: #fef9e7;
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .booking-card {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: sticky;
+    top: 120px;
+  }
+
+  .booking-price {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .booking-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+
+  .booking-note {
+    font-size: 0.78rem;
+    opacity: 0.7;
+    margin-top: 0.75rem;
+  }
+
+  .sidebar-card {
+    background: var(--color-white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-card h3 { font-size: 1rem; margin-bottom: 0.75rem; }
+
+  .fact-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    font-size: 0.85rem;
+  }
+
+  .fact-row:last-child { border-bottom: none; }
+  .fact-row span:first-child { color: var(--color-text-light); }
+  .fact-row span:last-child { font-weight: 600; }
+
+  .sidebar-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .mini-meta { font-size: 0.78rem; color: var(--color-accent); }
+
+  @media (max-width: 768px) {
+    .hero-gallery { grid-template-columns: 1fr; }
+    .hero-side-imgs { display: none; }
+    .hero-main-img img { height: 280px; }
+    .castle-layout { grid-template-columns: 1fr; }
+    .booking-card { position: static; }
+    .castle-stats { grid-template-columns: repeat(2, 1fr); }
+    .amenities-grid, .nearby-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .booking-strip-inner { flex-direction: column; text-align: center; }
+  }
+</style>

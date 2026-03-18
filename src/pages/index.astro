@@ -1,0 +1,535 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { castles, regions } from '../data/castles';
+import { blogPosts } from '../data/blogPosts';
+
+const featuredPosts = blogPosts.slice(0, 4);
+
+const categories = [
+  {
+    title: 'Wedding Castles',
+    description: 'Say "I do" in a fairytale setting. Browse castles licensed for weddings with grand halls and stunning grounds.',
+    href: '/castles?type=wedding',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=600&q=75&fm=webp',
+  },
+  {
+    title: 'Luxury Castles',
+    description: 'Indulge in opulent castle stays with premium amenities, hot tubs, and full concierge service.',
+    href: '/castles?type=luxury',
+    image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=75&fm=webp',
+  },
+  {
+    title: 'Scottish Castles',
+    description: 'From Highland fortresses to island retreats, Scotland has the UK\'s most dramatic castle stays.',
+    href: '/regions/scotland',
+    image: 'https://images.unsplash.com/photo-1534954553104-88cb75be7648?w=600&q=75&fm=webp',
+  },
+  {
+    title: 'Family Castles',
+    description: 'Spacious castles perfect for family gatherings, with grounds for children and games rooms.',
+    href: '/castles?type=family',
+    image: 'https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=600&q=75&fm=webp',
+  },
+  {
+    title: 'Romantic Breaks',
+    description: 'Intimate tower rooms, four-poster beds, and roaring fires — perfect for couples.',
+    href: '/castles?type=romantic',
+    image: 'https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&q=75&fm=webp',
+  },
+  {
+    title: 'Budget Stays',
+    description: 'Affordable castle experiences that prove you don\'t need a royal budget for a royal stay.',
+    href: '/castles?type=budget',
+    image: 'https://images.unsplash.com/photo-1570214476695-19bd467e3636?w=600&q=75&fm=webp',
+  },
+];
+
+const highlights = [
+  { stat: '200+', label: 'Castles Listed' },
+  { stat: '4', label: 'Regions Covered' },
+  { stat: '1000+', label: 'Years of History' },
+  { stat: '4.8/5', label: 'Average Rating' },
+];
+---
+
+<BaseLayout title="Home" description="RentACastle - Britain's largest castle rental directory. Discover stunning castles to rent across Scotland, England, Wales, and Northern Ireland. From medieval fortresses to fairytale towers.">
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': 'https://rentacastle.co.uk/#website',
+        url: 'https://rentacastle.co.uk',
+        name: 'RentACastle',
+        description: 'Britain\'s largest castle rental directory. Discover stunning castles to rent across the United Kingdom.',
+        publisher: { '@id': 'https://rentacastle.co.uk/#organization' },
+        inLanguage: 'en-GB',
+      },
+      {
+        '@type': 'Organization',
+        '@id': 'https://rentacastle.co.uk/#organization',
+        name: 'RentACastle',
+        url: 'https://rentacastle.co.uk',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://rentacastle.co.uk/favicon.svg',
+        },
+        sameAs: [],
+      },
+    ],
+  })} />
+
+  <!-- Hero Slideshow -->
+  <section class="hero" id="hero">
+    <div class="hero-slides">
+      <img
+        src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=75&fm=webp"
+        srcset="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=640&q=75&fm=webp 640w, https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=75&fm=webp 1200w"
+        sizes="100vw"
+        alt="Majestic Scottish castle on a loch at sunset"
+        class="hero-slide active"
+        fetchpriority="high"
+        width="1200"
+        height="800"
+      />
+      <img src="https://images.unsplash.com/photo-1534954553104-88cb75be7648?w=1200&q=75&fm=webp" alt="Historic English castle surrounded by gardens" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1580137189272-c9379f8864fd?w=1200&q=75&fm=webp" alt="Medieval castle tower against dramatic sky" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1564429238961-bf8fd03a3776?w=1200&q=75&fm=webp" alt="Castle interior with grand fireplace and period furnishings" class="hero-slide" loading="lazy" width="1200" height="800" />
+      <img src="https://images.unsplash.com/photo-1570214476695-19bd467e3636?w=1200&q=75&fm=webp" alt="Fairytale castle among rolling British hills" class="hero-slide" loading="lazy" width="1200" height="800" />
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Britain's Largest Castle Rental Directory</p>
+      <h1>Rent a Castle<br/><span class="hero-accent">Anywhere in the UK</span></h1>
+      <p class="hero-sub">Discover Britain's most extraordinary stays. From medieval fortresses to fairytale towers, find your perfect castle rental.</p>
+      <div class="hero-buttons">
+        <a href="/castles" class="btn btn-accent">Browse Castles</a>
+        <a href="/castles?type=wedding" class="btn btn-outline" style="border-color: white; color: white;">Wedding Venues</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        {highlights.map(h => (
+          <div class="stat-item">
+            <span class="stat-number">{h.stat}</span>
+            <span class="stat-label">{h.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories: Explore by Type -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Castle Types</span>
+        <h2>Explore by Type</h2>
+        <p>Whether you're planning a wedding, a family reunion, or a romantic escape, we have the perfect castle for you.</p>
+      </div>
+      <div class="grid grid-3">
+        {categories.map(cat => (
+          <a href={cat.href} class="category-card card">
+            <img src={cat.image} alt={cat.title} class="card-image" loading="lazy" width="600" height="400" />
+            <div class="card-body">
+              <h3>{cat.title}</h3>
+              <p>{cat.description}</p>
+              <span class="card-link">Explore →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Region Cards -->
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge">Regions</span>
+        <h2>Explore by Region</h2>
+        <p>From the Scottish Highlands to the Welsh valleys, each region offers a unique castle experience.</p>
+      </div>
+      <div class="grid grid-2">
+        {regions.map(region => {
+          const count = castles.filter(c => c.region === region.name).length;
+          return (
+            <a href={`/regions/${region.slug}`} class="region-card card">
+              <div class="region-img-wrap">
+                <img src={region.image} alt={`Castles in ${region.name}`} class="card-image region-image" loading="lazy" width="600" height="400" />
+                <div class="region-overlay-tag">
+                  <span class="region-count">{count} Castle{count !== 1 ? 's' : ''}</span>
+                </div>
+              </div>
+              <div class="card-body">
+                <h3>{region.name}</h3>
+                <p>{region.description.slice(0, 120)}...</p>
+                <span class="card-link">Explore {region.name} →</span>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- List Your Castle CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="partners-cta">
+        <div class="partners-cta-content">
+          <span class="badge">Own a Castle?</span>
+          <h2>Partner With Us</h2>
+          <p>List your castle on Britain's fastest-growing castle rental directory. Reach thousands of travellers looking for their perfect castle stay. Join our network of exceptional heritage properties.</p>
+          <a href="/partners" class="btn btn-accent">List Your Castle →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Guides -->
+  {featuredPosts.length > 0 && (
+    <section class="section" style="background: var(--color-bg-alt);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">Castle Guides</span>
+          <h2>Plan Your Castle Stay</h2>
+          <p>Expert guides and insider tips to help you choose and book the perfect castle rental.</p>
+        </div>
+        <div class="grid grid-4">
+          {featuredPosts.map(post => (
+            <a href={`/blog/${post.slug}`} class="guide-card card">
+              <img src={post.image} alt={post.title} class="card-image guide-image" loading="lazy" />
+              <div class="card-body">
+                <span class="tag">{post.category}</span>
+                <h3 class="guide-title">{post.title}</h3>
+                <span class="card-link">{post.readTime} →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <a href="/blog" class="btn btn-outline">View All Guides →</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Bottom CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <span class="badge">Start Exploring</span>
+          <h2>Ready to Stay in a Castle?</h2>
+          <p>Browse our complete collection of castle rentals across the United Kingdom. From medieval fortresses to romantic tower houses, your perfect castle stay awaits.</p>
+          <a href="/castles" class="btn btn-accent">Browse All Castles →</a>
+        </div>
+        <img
+          src="https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=600&q=75&fm=webp"
+          alt="Beautiful castle in the British countryside"
+          class="cta-image"
+          loading="lazy"
+          width="600"
+          height="400"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--color-white);
+    overflow: hidden;
+  }
+
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-in-out infinite alternate;
+  }
+
+  .hero-slide.active {
+    opacity: 1;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(26,58,42,0.5) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 1.5rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+    opacity: 1 !important;
+  }
+
+  .hero-content h1 {
+    color: var(--color-white);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin: 0 0 1.25rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+  }
+
+  .hero-accent {
+    color: var(--color-accent);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease infinite;
+  }
+
+  @keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); }
+    50% { transform: rotate(45deg) translateY(6px); }
+  }
+
+  .stats-bar {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 2.5rem 0;
+    margin-top: -2px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-top: 0.25rem;
+    display: block;
+  }
+
+  .category-card {
+    display: block;
+  }
+
+  .category-card .card-image {
+    height: 220px;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .region-card {
+    display: block;
+  }
+
+  .region-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .region-image {
+    height: 240px;
+    transition: transform 0.3s ease;
+  }
+
+  .region-card:hover .region-image {
+    transform: scale(1.05);
+  }
+
+  .region-overlay-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  }
+
+  .region-count {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .partners-cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: var(--radius);
+    padding: 3rem;
+    color: var(--color-white);
+  }
+
+  .partners-cta h2 {
+    color: var(--color-white);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .partners-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+  }
+
+  .cta-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .cta-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--color-primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    color: var(--color-white);
+  }
+
+  .cta-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cta-content h2 {
+    color: var(--color-white);
+    margin: 0.5rem 0 1rem;
+  }
+
+  .cta-content p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .cta-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 300px;
+  }
+
+  .guide-card { display: block; }
+  .guide-image { height: 160px; }
+  .guide-title { font-size: 1rem; line-height: 1.4; }
+
+  @media (max-width: 768px) {
+    .hero { height: 85vh; min-height: 550px; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-card { grid-template-columns: 1fr; }
+    .cta-image { max-height: 250px; }
+    .partners-cta { padding: 2rem; }
+    .hero-scroll-hint { display: none; }
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+</script>

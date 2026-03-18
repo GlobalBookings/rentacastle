@@ -1,0 +1,245 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { blogPosts } from '../../data/blogPosts';
+
+const title = 'Castle Rental Guides & Blog';
+const description =
+  'Expert guides, tips and inspiration for castle stays across the UK. From budget-friendly finds to wedding planning, discover everything you need for the perfect castle rental.';
+
+const breadcrumbItems = [
+  { label: 'Blog' },
+];
+
+const sortedPosts = [...blogPosts].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+
+const categoryColors: Record<string, string> = {
+  Guides: '#2563eb',
+  Wedding: '#db2777',
+  Seasonal: '#059669',
+  Budget: '#d97706',
+  Regional: '#7c3aed',
+  Tips: '#0891b2',
+};
+---
+
+<BaseLayout title={title} description={description}>
+    <!-- Hero Section -->
+    <section class="blog-hero">
+      <div class="blog-hero-overlay"></div>
+      <div class="blog-hero-content">
+        <h1>Castle Guides & Travel Tips</h1>
+        <p>
+          Expert advice and inspiration for your castle stay. Whether you're
+          planning a romantic getaway, a family holiday or a grand wedding, our
+          guides have you covered.
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <!-- Blog Grid -->
+      <section class="blog-grid-section">
+        <div class="blog-grid">
+          {
+            sortedPosts.map((post) => (
+              <a href={`/blog/${post.slug}`} class="blog-card">
+                <div class="blog-card-image">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    loading="lazy"
+                    width="400"
+                    height="250"
+                  />
+                  <span
+                    class="blog-card-category"
+                    style={`background-color: ${categoryColors[post.category] || '#6b7280'}`}
+                  >
+                    {post.category}
+                  </span>
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <time datetime={post.date}>
+                      {new Date(post.date).toLocaleDateString('en-GB', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric',
+                      })}
+                    </time>
+                    <span class="blog-card-dot">·</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <h2 class="blog-card-title">{post.title}</h2>
+                  <p class="blog-card-description">{post.description}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    position: relative;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1400&q=80')
+      center / cover no-repeat;
+    text-align: center;
+    color: #fff;
+  }
+
+  .blog-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0.7),
+      rgba(15, 23, 42, 0.85)
+    );
+  }
+
+  .blog-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 3rem 1.5rem;
+  }
+
+  .blog-hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .blog-hero-content p {
+    font-size: 1.125rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .blog-grid-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  .blog-card-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+  }
+
+  .blog-card-category {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .blog-card-body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+  }
+
+  .blog-card-dot {
+    font-size: 0.625rem;
+  }
+
+  .blog-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+  }
+
+  .blog-card-description {
+    font-size: 0.9rem;
+    color: #4b5563;
+    line-height: 1.6;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    .blog-hero-content h1 {
+      font-size: 1.75rem;
+    }
+
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

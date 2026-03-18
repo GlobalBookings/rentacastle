@@ -1,0 +1,434 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { blogPosts } from '../../data/blogPosts';
+import type { BlogPost } from '../../data/blogPosts';
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+
+const breadcrumbItems = [
+  { label: 'Blog', href: '/blog' },
+  { label: post.title },
+];
+
+const categoryColors: Record<string, string> = {
+  Guides: '#2563eb',
+  Wedding: '#db2777',
+  Seasonal: '#059669',
+  Budget: '#d97706',
+  Regional: '#7c3aed',
+  Tips: '#0891b2',
+};
+
+// Get related posts: same category first, then fill with random others
+const sameCategoryPosts = blogPosts.filter(
+  (p) => p.category === post.category && p.slug !== post.slug
+);
+const otherPosts = blogPosts.filter(
+  (p) => p.category !== post.category && p.slug !== post.slug
+);
+const relatedPosts = [...sameCategoryPosts, ...otherPosts].slice(0, 3);
+
+const formattedDate = new Date(post.date).toLocaleDateString('en-GB', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const articleSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.description,
+  image: post.image,
+  datePublished: post.date,
+  author: {
+    '@type': 'Organization',
+    name: 'RentACastle',
+    url: 'https://rentacastle.co.uk',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'RentACastle',
+    url: 'https://rentacastle.co.uk',
+  },
+});
+---
+
+<BaseLayout title={post.title} description={post.description}>
+  <script type="application/ld+json" set:html={articleSchema} />
+    <!-- Hero Image -->
+    <section class="article-hero">
+      <img src={post.image} alt={post.title} width="1400" height="600" />
+      <div class="article-hero-overlay"></div>
+    </section>
+
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+
+      <article class="article">
+        <header class="article-header">
+          <span
+            class="article-category"
+            style={`background-color: ${categoryColors[post.category] || '#6b7280'}`}
+          >
+            {post.category}
+          </span>
+          <h1>{post.title}</h1>
+          <div class="article-meta">
+            <time datetime={post.date}>{formattedDate}</time>
+            <span class="article-meta-dot">·</span>
+            <span>{post.readTime}</span>
+          </div>
+        </header>
+
+        <div class="article-content">
+          <p class="article-lead">{post.description}</p>
+
+          <p>
+            Castle stays have become one of the most popular and unique
+            accommodation options across the United Kingdom. Whether you're
+            looking for a romantic getaway, a family adventure, or the perfect
+            venue for a special celebration, the UK's historic castles offer an
+            unmatched experience that combines heritage, luxury and natural
+            beauty.
+          </p>
+
+          <h2>What Makes This Special</h2>
+          <p>
+            The appeal of castle stays goes far beyond simple accommodation.
+            When you rent a castle, you're stepping into centuries of history,
+            surrounded by architecture that tells stories of knights, kings and
+            dramatic landscapes. Modern castle rentals combine this historic
+            atmosphere with contemporary comforts, ensuring your stay is as
+            comfortable as it is memorable.
+          </p>
+
+          <h2>Key Things to Know</h2>
+          <ul>
+            <li>Book well in advance, especially for peak seasons and popular dates</li>
+            <li>Check what's included — many castles offer catering, activities and concierge services</li>
+            <li>Consider the location carefully, especially if guests are travelling from different parts of the country</li>
+            <li>Ask about accessibility and any specific requirements before booking</li>
+            <li>Look for castles with flexible cancellation policies for added peace of mind</li>
+          </ul>
+
+          <h2>Making the Most of Your Castle Stay</h2>
+          <p>
+            To truly enjoy your castle experience, take the time to explore the
+            grounds, learn about the history of the property, and embrace the
+            unique atmosphere. Many castles offer guided tours, local activity
+            recommendations, and bespoke experiences that can transform a simple
+            stay into an unforgettable adventure.
+          </p>
+
+          <p>
+            Ready to find your perfect castle? Browse our curated collection of
+            the finest castle rentals across the UK and start planning your
+            extraordinary stay today.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="article-cta">
+          <h3>Ready to Book Your Castle Stay?</h3>
+          <p>Browse our curated collection of the finest castle rentals across the UK.</p>
+          <a href="/castles" class="btn btn-primary">Browse Castles</a>
+        </div>
+      </article>
+
+      <!-- Related Posts -->
+      {
+        relatedPosts.length > 0 && (
+          <section class="related-posts">
+            <h2 class="related-posts-title">You Might Also Like</h2>
+            <div class="related-posts-grid">
+              {relatedPosts.map((related) => (
+                <a href={`/blog/${related.slug}`} class="related-card">
+                  <div class="related-card-image">
+                    <img
+                      src={related.image}
+                      alt={related.title}
+                      loading="lazy"
+                      width="400"
+                      height="250"
+                    />
+                    <span
+                      class="related-card-category"
+                      style={`background-color: ${categoryColors[related.category] || '#6b7280'}`}
+                    >
+                      {related.category}
+                    </span>
+                  </div>
+                  <div class="related-card-body">
+                    <h3>{related.title}</h3>
+                    <span class="related-card-meta">{related.readTime}</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+    </div>
+</BaseLayout>
+
+<style>
+  .article-hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .article-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      rgba(15, 23, 42, 0.4)
+    );
+  }
+
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .article {
+    padding: 2rem 0;
+  }
+
+  .article-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .article-category {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .article-header h1 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  .article-meta-dot {
+    font-size: 0.625rem;
+  }
+
+  .article-content {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: #374151;
+  }
+
+  .article-content .article-lead {
+    font-size: 1.2rem;
+    color: #1f2937;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 2.5rem 0 1rem;
+  }
+
+  .article-content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .article-content ul {
+    margin: 1rem 0 1.5rem 1.5rem;
+    padding: 0;
+  }
+
+  .article-content ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.25rem;
+  }
+
+  .article-cta {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border-radius: 16px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .article-cta h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .article-cta p {
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .btn-primary {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  /* Related Posts */
+  .related-posts {
+    padding: 3rem 0 4rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .related-posts-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1.5rem;
+  }
+
+  .related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .related-card {
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-card-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+
+  .related-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .related-card:hover .related-card-image img {
+    transform: scale(1.05);
+  }
+
+  .related-card-category {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .related-card-body {
+    padding: 1rem;
+  }
+
+  .related-card-body h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .related-card-meta {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+
+  @media (max-width: 768px) {
+    .article-hero {
+      height: 260px;
+    }
+
+    .article-header h1 {
+      font-size: 1.65rem;
+    }
+
+    .related-posts-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,238 @@
+---
+const currentYear = new Date().getFullYear();
+
+const exploreLinks = [
+  { name: 'Castles', href: '/castles/' },
+  { name: 'Scotland', href: '/regions/scotland/' },
+  { name: 'England', href: '/regions/england/' },
+  { name: 'Wales', href: '/regions/wales/' },
+  { name: 'Wedding Venues', href: '/castle-types/wedding-castles/' },
+  { name: 'Luxury Stays', href: '/castle-types/luxury-castles/' },
+];
+
+const planLinks = [
+  { name: 'Blog', href: '/blog/' },
+  { name: 'How It Works', href: '/guides/how-to-rent-a-castle/' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'FAQ', href: '/faq/' },
+  { name: 'Packing List', href: '/guides/packing-list/' },
+];
+
+const infoLinks = [
+  { name: 'English Heritage', href: 'https://www.english-heritage.org.uk/', external: true },
+  { name: 'Historic Houses', href: 'https://www.historichouses.org/', external: true },
+  { name: 'National Trust', href: 'https://www.nationaltrust.org.uk/', external: true },
+  { name: 'Visit Britain', href: 'https://www.visitbritain.com/', external: true },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- About Column -->
+      <div class="footer-col footer-col--about">
+        <a href="/" class="footer-logo" aria-label="RentACastle Home">
+          <span class="footer-logo__icon">&#127984;</span>
+          <span class="footer-logo__text">RentACastle</span>
+        </a>
+        <p class="footer-about">
+          Discover and rent stunning castles across the United Kingdom. From the misty Scottish Highlands to the rolling English countryside, we connect you with Britain's most extraordinary castle stays.
+        </p>
+      </div>
+
+      <!-- Explore Column -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Explore</h3>
+        <ul class="footer-links">
+          {exploreLinks.map((link) => (
+            <li><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Plan Your Stay Column -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Plan Your Stay</h3>
+        <ul class="footer-links">
+          {planLinks.map((link) => (
+            <li><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Info Column -->
+      <div class="footer-col">
+        <h3 class="footer-heading">Useful Links</h3>
+        <ul class="footer-links">
+          {infoLinks.map((link) => (
+            <li>
+              <a href={link.href} target={link.external ? '_blank' : undefined} rel={link.external ? 'noopener noreferrer' : undefined}>
+                {link.name}
+                {link.external && (
+                  <svg class="external-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M10.5 1.5L4.5 7.5M10.5 1.5H7.5M10.5 1.5V4.5M5.5 2.5H2.5C1.94772 2.5 1.5 2.94772 1.5 3.5V9.5C1.5 10.0523 1.94772 10.5 2.5 10.5H8.5C9.05228 10.5 9.5 10.0523 9.5 9.5V6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; {currentYear} RentACastle. All rights reserved.
+      </p>
+      <p class="footer-tagline">Your gateway to Britain's most extraordinary stays.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-primary);
+    color: rgba(255, 255, 255, 0.8);
+    padding: var(--space-4xl) 0 var(--space-xl);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-3xl);
+  }
+
+  /* Logo */
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    color: var(--color-white);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-logo:hover {
+    color: var(--color-accent-light);
+  }
+
+  .footer-logo__icon {
+    font-size: 1.75rem;
+    line-height: 1;
+  }
+
+  /* About */
+  .footer-about {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: var(--space-md);
+  }
+
+  /* Headings */
+  .footer-heading {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--space-lg);
+    position: relative;
+    padding-bottom: var(--space-sm);
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-accent);
+  }
+
+  /* Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .footer-links a:hover {
+    color: var(--color-accent-light);
+    padding-left: 4px;
+  }
+
+  .external-icon {
+    opacity: 0.5;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .footer-copyright {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+
+  .footer-tagline {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-col--about {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .site-footer {
+      padding: var(--space-3xl) 0 var(--space-lg);
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

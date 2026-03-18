@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { castles, regions } from '../../data/castles';
+
+const regionCounts = regions.map(r => ({
+  ...r,
+  count: castles.filter(c => c.region === r.name).length,
+}));
+---
+
+<BaseLayout title="Castle Regions UK - Explore by Region | RentACastle" description="Explore castle rentals across Scotland, England, Wales, and Northern Ireland. Each region offers unique castle experiences, from Highland fortresses to Tudor manor houses.">
+  <div class="container">
+    <Breadcrumbs items={[{ label: 'Regions' }]} />
+  </div>
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=1600&q=80" alt="Aerial view of British countryside with castles" class="page-hero-bg" loading="eager" fetchpriority="high" />
+    <div class="page-hero-content">
+      <span class="badge">Regions</span>
+      <h1>Explore Castle Regions</h1>
+      <p>The United Kingdom offers an unparalleled selection of castle rentals. Explore each region to find your perfect stay — from the Scottish Highlands to the Welsh valleys.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Choose Your Region</h2>
+        <p>Each corner of the UK has its own castle character. Browse by region to discover what makes each area special.</p>
+      </div>
+      <div class="grid grid-2">
+        {regionCounts.map(region => (
+          <a href={`/regions/${region.slug}`} class="region-card card">
+            <div class="region-img-wrap">
+              <img src={region.image} alt={`Castles in ${region.name}`} class="card-image region-image" loading="lazy" />
+              <div class="region-overlay">
+                <span class="region-count">{region.count} Castle{region.count !== 1 ? 's' : ''}</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <h3>{region.name}</h3>
+              <p>{region.description}</p>
+              <span class="card-link">Explore {region.name} →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--color-bg-alt);">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Can't Decide?</h2>
+        <p>Browse our complete collection of castle rentals across all regions of the United Kingdom.</p>
+        <a href="/castles" class="btn btn-primary">Browse All Castles →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .region-card {
+    display: block;
+  }
+
+  .region-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .region-image {
+    height: 280px;
+    transition: transform 0.3s ease;
+  }
+
+  .region-card:hover .region-image {
+    transform: scale(1.05);
+  }
+
+  .region-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  }
+
+  .region-count {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .card-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .cta-box {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .cta-box h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-box p {
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .region-image { height: 200px; }
+  }
+</style>

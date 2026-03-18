@@ -1,0 +1,70 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  lastUpdated?: string;
+}
+
+const {
+  title,
+  description = 'Discover and rent stunning castles across the United Kingdom. From Scottish Highlands to English countryside, find your perfect castle stay.',
+  image = 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=80',
+  canonicalUrl,
+  lastUpdated,
+} = Astro.props;
+
+const siteName = 'RentACastle';
+const pageTitle = title === 'Home'
+  ? 'RentACastle - Rent a Castle Anywhere in the UK'
+  : `${title} | RentACastle`;
+const siteUrl = 'https://rentacastle.co.uk';
+const resolvedCanonical = canonicalUrl || new URL(Astro.url.pathname, siteUrl).href;
+const resolvedImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={resolvedCanonical} />
+
+  {lastUpdated && (
+    <meta property="article:modified_time" content={lastUpdated} />
+  )}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={resolvedImage} />
+  <meta property="og:url" content={resolvedCanonical} />
+  <meta property="og:site_name" content={siteName} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={resolvedImage} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <Header />
+  <main id="main-content">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
