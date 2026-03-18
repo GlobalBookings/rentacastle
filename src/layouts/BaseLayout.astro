@@ -58,6 +58,15 @@ const resolvedImage = image.startsWith('http') ? image : new URL(image, siteUrl)
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <!-- Google tag (gtag.js) -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-17XC2TGN5Q"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-17XC2TGN5Q');
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
