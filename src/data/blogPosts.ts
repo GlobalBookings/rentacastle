@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'dog-friendly-castles-near-me',
+    title: 'Pawsome Castle Stays: Top Dog-Friendly Rentals Near You 2026',
+    description: 'Discover enchanting dog-friendly castle rentals across the UK for 2026. From Scottish highlands to English countryside - find the perfect pawsome getaway for you and your furry friend.',
+    date: '2026-03-19',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'sherwood-castle-by-liv-retreats-reviews',
+    title: 'Sherwood Castle by Liv Retreats: 2026 Guest Reviews Inside',
+    description: 'Discover luxury at Sherwood Castle with Liv Retreats. Read genuine 2026 guest reviews of this stunning UK castle rental and plan your perfect retreat.',
+    date: '2026-03-19',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1449452198679-05c7fd30f416?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'castle-airbnb-uk',
+    title: 'Sleep Like Royalty: Best Castle Airbnbs in the UK for 2026',
+    description: 'Discover enchanting castle Airbnbs across the UK for 2026. From Scottish highlands to Welsh valleys, find your perfect royal retreat with towers, moats & history.',
+    date: '2026-03-19',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'scottish-castle-hotels-5-star',
     title: '5 Star Scottish Castle Hotels: Luxurious Stays in 2026',
     description: 'Discover Britain\'s finest 5-star Scottish castle hotels for 2026. Experience luxury accommodation in historic fortresses with world-class amenities and service.',
