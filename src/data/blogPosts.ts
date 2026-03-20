@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'castle-in-bath-uk',
+    title: 'Stay in a Fairytale Castle Near Bath: 2026\'s Royal Getaway',
+    description: 'Experience luxury castle living near Bath in 2026. Book your royal getaway in an authentic fairytale castle with period features, stunning grounds & modern amenities.',
+    date: '2026-03-20',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'can-you-take-dogs-into-warwick-castle',
+    title: 'Can You Bring Dogs to Warwick Castle? 2026 Pet Guide',
+    description: 'Planning a castle visit with your furry friend? Discover Warwick Castle\'s 2026 pet policy, dog-friendly areas, and essential tips for visiting this historic attraction with dogs.',
+    date: '2026-03-20',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'bovey-castle-spa-break',
+    title: 'Bovey Castle Spa Break: Your Ultimate 2026 Devon Retreat',
+    description: 'Experience luxury at Bovey Castle with our ultimate 2026 Devon spa break guide. Discover championship golf, world-class treatments, and stunning moorland views.',
+    date: '2026-03-20',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'dog-friendly-castles-near-me',
     title: 'Pawsome Castle Stays: Top Dog-Friendly Rentals Near You 2026',
     description: 'Discover enchanting dog-friendly castle rentals across the UK for 2026. From Scottish highlands to English countryside - find the perfect pawsome getaway for you and your furry friend.',
