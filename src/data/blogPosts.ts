@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'castle-stag-do-uk-near-me',
+    title: 'Epic Castle Stag Do\'s Near You: 2026\'s Ultimate UK Guide',
+    description: 'Discover the UK\'s top castle rentals for unforgettable stag do\'s in 2026. From Scottish highlands to Welsh fortresses - find your perfect venue today.',
+    date: '2026-03-21',
+    category: 'Activities',
+    image: 'https://images.unsplash.com/photo-1449452198679-05c7fd30f416?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'hever-castle-accommodation-prices',
+    title: 'Hever Castle Stay Costs 2026: What You\'ll Actually Pay',
+    description: 'Discover the real costs of staying at Hever Castle in 2026. From room rates to hidden fees, we break down exactly what you\'ll pay for this luxury experience.',
+    date: '2026-03-21',
+    category: 'Planning',
+    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'can-you-get-married-in-a-castle-in-the-uk',
+    title: 'Say "I Do" in a UK Castle: Your 2026 Wedding Guide',
+    description: 'Plan your dream 2026 castle wedding in the UK. Discover stunning venues, costs, catering options, and expert tips for an unforgettable fairytale celebration.',
+    date: '2026-03-21',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'castle-in-bath-uk',
     title: 'Stay in a Fairytale Castle Near Bath: 2026\'s Royal Getaway',
     description: 'Experience luxury castle living near Bath in 2026. Book your royal getaway in an authentic fairytale castle with period features, stunning grounds & modern amenities.',
