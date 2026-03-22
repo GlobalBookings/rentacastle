@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'castles-to-hire-uk',
+    title: 'Hire a Royal Castle in the UK: 2026\'s Most Luxurious Venues',
+    description: 'Discover Britain\'s most exclusive castle hire venues for 2026. From medieval fortresses to stately homes, find the perfect royal setting for your luxury event.',
+    date: '2026-03-22',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'castle-stag-do-uk-near-me',
     title: 'Epic Castle Stag Do\'s Near You: 2026\'s Ultimate UK Guide',
     description: 'Discover the UK\'s top castle rentals for unforgettable stag do\'s in 2026. From Scottish highlands to Welsh fortresses - find your perfect venue today.',
