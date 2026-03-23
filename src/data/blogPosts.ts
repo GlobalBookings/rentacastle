@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'luxury-castle-stays-with-hot-tub-england',
+    title: 'Luxury Castle Stays with Hot Tubs: England\'s Best for 2026',
+    description: 'Experience ultimate luxury at England\'s finest castle rentals featuring hot tubs for 2026. Discover historic grandeur with modern amenities for unforgettable stays.',
+    date: '2026-03-23',
+    category: 'Regions',
+    image: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'castle-accommodation-lake-district',
+    title: 'Royal Retreats: Castle Stays in the Lake District 2026',
+    description: 'Discover enchanting castle rentals in the Lake District for 2026. From medieval fortresses to luxury manor houses, find your perfect royal retreat amongst stunning fells.',
+    date: '2026-03-23',
+    category: 'Regions',
+    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'best-castles-to-rent-in-scotland-for-weddings',
+    title: 'Dreamy Scottish Castle Weddings: Top 2026 Rental Picks',
+    description: 'Discover Scotland\'s most enchanting castle wedding venues for 2026. From Highland fortresses to Lowland manor houses, find your perfect fairytale setting.',
+    date: '2026-03-23',
+    category: 'Weddings',
+    image: 'https://images.unsplash.com/photo-1544939514-aa98d908bc47?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'castles-to-hire-uk',
     title: 'Hire a Royal Castle in the UK: 2026\'s Most Luxurious Venues',
     description: 'Discover Britain\'s most exclusive castle hire venues for 2026. From medieval fortresses to stately homes, find the perfect royal setting for your luxury event.',
