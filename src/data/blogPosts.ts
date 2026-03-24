@@ -10,6 +10,33 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'how-much-does-it-cost-to-rent-a-castle-in-the-uk',
+    title: 'How Much Does It Cost to Rent a UK Castle in 2026?',
+    description: 'Discover the cost of renting a UK castle in 2026. From Scottish highlands to Welsh fortresses, explore pricing for weddings, holidays & events in Britain.',
+    date: '2026-03-24',
+    category: 'Planning',
+    image: 'https://images.unsplash.com/photo-1544939514-aa98d908bc47?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'castle-hen-party-ideas-and-venues-uk',
+    title: 'Royal Hen Party Ideas: UK Castle Venues for 2026',
+    description: 'Plan an unforgettable royal hen party at stunning UK castle venues in 2026. Discover luxury accommodations, activities, and regal experiences for your celebration.',
+    date: '2026-03-24',
+    category: 'Weddings',
+    image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'pet-friendly-castle-holidays-wales',
+    title: 'Paws & Towers: Pet-Friendly Castle Holidays in Wales 2026',
+    description: 'Discover magical pet-friendly castle holidays in Wales for 2026. Bring your furry friends to stunning historic properties with dog-friendly facilities and grounds.',
+    date: '2026-03-24',
+    category: 'Regions',
+    image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'luxury-castle-stays-with-hot-tub-england',
     title: 'Luxury Castle Stays with Hot Tubs: England\'s Best for 2026',
     description: 'Experience ultimate luxury at England\'s finest castle rentals featuring hot tubs for 2026. Discover historic grandeur with modern amenities for unforgettable stays.',
