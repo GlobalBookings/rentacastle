@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'hazlewood-castle',
+    title: 'Sleep Like Royalty: Hazlewood Castle Rentals for 2026',
+    description: 'Experience medieval grandeur at Hazlewood Castle rentals in 2026. Book luxury accommodation in this historic Yorkshire fortress for unforgettable stays.',
+    date: '2026-03-25',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1585231474241-c8340c2b2c65?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'how-much-does-it-cost-to-rent-a-castle-in-the-uk',
     title: 'How Much Does It Cost to Rent a UK Castle in 2026?',
     description: 'Discover the cost of renting a UK castle in 2026. From Scottish highlands to Welsh fortresses, explore pricing for weddings, holidays & events in Britain.',
