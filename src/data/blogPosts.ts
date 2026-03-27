@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'castle-rental-uk',
+    title: 'Live Like Royalty: Best UK Castle Rentals for 2026',
+    description: 'Discover Britain\'s finest castle rentals for 2026. From Scottish highlands to Welsh valleys, experience luxury accommodation in historic castles perfect for holidays.',
+    date: '2026-03-27',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'hazlewood-castle',
     title: 'Sleep Like Royalty: Hazlewood Castle Rentals for 2026',
     description: 'Experience medieval grandeur at Hazlewood Castle rentals in 2026. Book luxury accommodation in this historic Yorkshire fortress for unforgettable stays.',
