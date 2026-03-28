@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'which-castle-did-anne-boleyn-live-in',
+    title: 'Live Like Anne Boleyn: Rent Her Historic Castles in 2026',
+    description: 'Discover where to rent Anne Boleyn\'s historic castles in 2026. Experience Tudor luxury at Hever Castle and other royal residences across England.',
+    date: '2026-03-28',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1553434320-e9f5757140b1?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
+    slug: 'hire-a-castle-for-a-weekend',
+    title: 'Live Like Royalty: Hire a Castle for Your 2026 Weekend Break',
+    description: 'Experience the ultimate luxury weekend break by hiring your own castle in 2026. From Scottish highlands to Welsh valleys, live like royalty in Britain\'s finest.',
+    date: '2026-03-28',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
     slug: 'castle-rental-uk',
     title: 'Live Like Royalty: Best UK Castle Rentals for 2026',
     description: 'Discover Britain\'s finest castle rentals for 2026. From Scottish highlands to Welsh valleys, experience luxury accommodation in historic castles perfect for holidays.',
