@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'where-is-hazel-wood-castle',
+    title: 'Discover Hazelwood Castle: Your 2026 Yorkshire Escape Guide',
+    description: 'Escape to historic Hazelwood Castle in Yorkshire for 2026. Discover luxury accommodation, stunning grounds, and medieval charm in this complete rental guide.',
+    date: '2026-03-31',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'which-castle-did-anne-boleyn-live-in',
     title: 'Live Like Anne Boleyn: Rent Her Historic Castles in 2026',
     description: 'Discover where to rent Anne Boleyn\'s historic castles in 2026. Experience Tudor luxury at Hever Castle and other royal residences across England.',
