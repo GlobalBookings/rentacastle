@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'what-is-a-chateau-vs-castle',
+    title: 'Château vs Castle: Your 2026 UK Rental Guide Explained',
+    description: 'Discover the key differences between châteaux and castles for your 2026 UK rental holiday. Our comprehensive guide helps you choose the perfect historic venue.',
+    date: '2026-04-03',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1512424113276-fa9f6a112384?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'where-is-hazel-wood-castle',
     title: 'Discover Hazelwood Castle: Your 2026 Yorkshire Escape Guide',
     description: 'Escape to historic Hazelwood Castle in Yorkshire for 2026. Discover luxury accommodation, stunning grounds, and medieval charm in this complete rental guide.',
