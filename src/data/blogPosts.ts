@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'orchardleigh-castle',
+    title: 'Orchardleigh Castle: Your Royal Getaway for 2026 Awaits',
+    description: 'Experience luxury at Orchardleigh Castle, Somerset\'s premier rental venue for 2026. Book your royal retreat in this stunning Grade II listed castle today.',
+    date: '2026-04-04',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1544939514-aa98d908bc47?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
+    slug: 'castle-folly-warwickshire',
+    title: 'Sleep in a Real Castle Folly: Warwickshire\'s Hidden Gem 2026',
+    description: 'Experience medieval luxury at Warwickshire\'s secret castle folly. Book your enchanting stay in this historic gem for 2026 and live like royalty in the English countryside.',
+    date: '2026-04-04',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
     slug: 'what-is-a-chateau-vs-castle',
     title: 'Château vs Castle: Your 2026 UK Rental Guide Explained',
     description: 'Discover the key differences between châteaux and castles for your 2026 UK rental holiday. Our comprehensive guide helps you choose the perfect historic venue.',
