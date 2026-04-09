@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'colliston-castle',
+    title: 'Stay Like Royalty: Colliston Castle Rental Guide 2026',
+    description: 'Experience luxury at Colliston Castle with our comprehensive 2026 rental guide. Discover rates, amenities, and booking tips for your royal Scottish getaway.',
+    date: '2026-04-09',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1571504211935-1c936b327411?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'orchardleigh-castle',
     title: 'Orchardleigh Castle: Your Royal Getaway for 2026 Awaits',
     description: 'Experience luxury at Orchardleigh Castle, Somerset\'s premier rental venue for 2026. Book your royal retreat in this stunning Grade II listed castle today.',
