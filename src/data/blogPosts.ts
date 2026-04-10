@@ -10,6 +10,15 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'ruthin-castle-spa-deals',
+    title: 'Ruthin Castle Spa Deals 2026: Luxury Breaks from £199',
+    description: 'Experience luxury at historic Ruthin Castle with exclusive 2026 spa deals from just £199. Book your Welsh castle break with premium treatments and dining.',
+    date: '2026-04-10',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1565008576549-57569a49371d?w=1200&q=80',
+    readTime: '8 min read',
+  },
+  {
     slug: 'colliston-castle',
     title: 'Stay Like Royalty: Colliston Castle Rental Guide 2026',
     description: 'Experience luxury at Colliston Castle with our comprehensive 2026 rental guide. Discover rates, amenities, and booking tips for your royal Scottish getaway.',
