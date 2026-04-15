@@ -10,6 +10,24 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'the-country-castle-company',
+    title: 'Sleep in a Real Castle: UK\'s Best Royal Rentals for 2026',
+    description: 'Experience royal luxury at Britain\'s finest castle rentals for 2026. From medieval fortresses to stately manor houses, discover enchanting stays fit for kings.',
+    date: '2026-04-15',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1526816229784-65d5d54ac8bc?w=1200&q=80',
+    readTime: '7 min read',
+  },
+  {
+    slug: 'what-castles-allow-dogs',
+    title: 'UK Castle Stays with Dogs: Pet-Friendly Fortresses 2026',
+    description: 'Discover enchanting pet-friendly castle holidays across the UK where you and your dog can stay in historic fortresses. Book your royal retreat for 2026 today.',
+    date: '2026-04-15',
+    category: 'Guides',
+    image: 'https://images.unsplash.com/photo-1585231474241-c8340c2b2c65?w=1200&q=80',
+    readTime: '6 min read',
+  },
+  {
     slug: 'ruthin-castle-spa-deals',
     title: 'Ruthin Castle Spa Deals 2026: Luxury Breaks from £199',
     description: 'Experience luxury at historic Ruthin Castle with exclusive 2026 spa deals from just £199. Book your Welsh castle break with premium treatments and dining.',
